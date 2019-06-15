@@ -98,13 +98,8 @@ namespace Elementure.GameLogic.Agents {
 			if (hits == null || hits.Length <= 0) {
 				return false;
 			}
-
-			RaycastHit hit = hits.FirstOrDefault(h => h.rigidbody.tag == TileTag);
-			if (hit.rigidbody?.gameObject == null) {
-				return false;
-			}
-
-			return hit.distance <= 0.01f;
+			
+			return hits.Any(h => h.distance <= feet.localPosition.magnitude);
 		}
 		#endregion
 
