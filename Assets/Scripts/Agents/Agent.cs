@@ -26,7 +26,6 @@ namespace Elementure.GameLogic.Agents {
 		[SerializeField] AgentEvent OnDead = new AgentEvent();
 
 		protected int currentHealth;
-		protected float cooldownTimer;
 
 		public string Id { get => id; }
 		public bool Initialized { get; protected set; }

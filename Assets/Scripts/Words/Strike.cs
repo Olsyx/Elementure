@@ -5,11 +5,12 @@ using UnityEngine;
 
 namespace Elementure.GameLogic.Words {
 
-	public class Walk : Verb {
-		protected const string modifierSheetName = "WalkSheet";
+	public class Strike : Verb {
 
-		public Walk(ModifierTypes modifier, Agent agent) : base(modifier, agent) {
-			Type = VerbTypes.Walk;
+		protected const string modifierSheetName = "StrikeSheet";
+
+		public Strike(ModifierTypes modifier, Agent agent) : base(modifier, agent) {
+			Type = VerbTypes.Teleport;
 		}
 
 		public override void LoadModifierProfile() {
@@ -22,7 +23,7 @@ namespace Elementure.GameLogic.Words {
 				return;
 			}
 
-			agent.transform.position += direction * agent.Attributes.Speed * Time.deltaTime;
+			// TODO
 		}
 	}
 

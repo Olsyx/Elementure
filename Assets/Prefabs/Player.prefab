@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42438425cda19c47a22a48afe493019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: Player
   attributes: {fileID: 11400000, guid: 288b3021183387f4b825c41b9f518021, type: 2}
   OnHealed:
     m_PersistentCalls:
@@ -208,4 +209,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8983d7f37a493004e91c7ea112eef25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVerbs: 3
+  initialInventory: {fileID: 11400000, guid: 8579099a2a8f85b4980d4d6de66d9168, type: 2}
