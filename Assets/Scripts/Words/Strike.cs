@@ -23,6 +23,8 @@ namespace Elementure.GameLogic.Words {
 				return;
 			}
 
+			agent.Animator.SetTrigger("Attack");
+
 			float distance = agent.Attributes.AttackDistance * profile.distance;
 			switch (modifier) {
 				case ModifierTypes.Area:
@@ -42,6 +44,7 @@ namespace Elementure.GameLogic.Words {
 		
 		private void NormalStrike(Vector3 direction) {
 			agent.Collider.enabled = false;
+
 			RaycastHit hit;
 			if (!Physics.Raycast(agent.transform.position, direction, out hit, profile.distance)) {
 				agent.Collider.enabled = true;

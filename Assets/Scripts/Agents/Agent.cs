@@ -99,6 +99,11 @@ namespace Elementure.GameLogic.Agents {
 		public void InstaKill() {
 			Damage(currentHealth);
 		}
+
+		public void Disappear() {
+			AgentManager.Remove(this);
+			Destroy(this.gameObject);
+		}
 		#endregion
 
 		#region Queries

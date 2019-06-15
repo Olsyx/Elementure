@@ -1,4 +1,5 @@
 ﻿using Elementure.GameLogic.Agents;
+using Elementure.GameLogic.Items;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,7 @@ namespace Elementure.GameLogic {
 		protected Agent self;
 
 		public bool Initialized { get; protected set; }
-		Vector3 movementDirection;
+		Vector3 movementDirection, lookingDirection;
 
 		#region Init
 		private void Awake() {
@@ -50,16 +51,17 @@ namespace Elementure.GameLogic {
 			SetMovementDirection();
 
 			if (movementDirection.magnitude > 0.001f) {
+				lookingDirection = movementDirection;
 				self.Inventory?.VerbMovement.Execute(movementDirection);
 				//self.Inventory.quickMenu.Close()
 			} 
 
 			if (Input.GetButton("A")) {
-				self.Inventory.VerbA?.Trigger(movementDirection);
+				self.Inventory.VerbA?.Trigger(lookingDirection);
 			}
 
 			if (Input.GetButton("B")) {
-				self.Inventory.VerbB?.Trigger(movementDirection);
+				self.Inventory.VerbB?.Trigger(lookingDirection);
 			}
 		}
 
@@ -71,8 +73,12 @@ namespace Elementure.GameLogic {
 		}
 
 		private void OnTriggerEnter(Collider other) {
-			// Detect word
-			// Not word => exit
+			Item item = other.attachedRigidbody.GetComponent<Item>();
+			if (item == null) {
+				return;
+			}
+
+			item.ApplyTo(this.self);
 
 			// Word => self.Inventory.quickMenu.Open(wordType)
 		}
