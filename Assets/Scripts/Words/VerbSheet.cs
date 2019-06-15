@@ -11,6 +11,7 @@ namespace Elementure.GameLogic.Words {
 	[Serializable]
 	public class ModifierProfile {
 		public float speed = 1f;
+		public float distance = 1f;
 		public float damage = 1f;
 		public float radius = 1f;
 	}

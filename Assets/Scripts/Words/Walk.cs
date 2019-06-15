@@ -14,7 +14,7 @@ namespace Elementure.GameLogic.Words {
 
 		public override void LoadModifierProfile() {
 			modifierSheet = VerbManager.LoadProfile(modifierSheetName);
-			currentProfile = modifierSheet.GetProfile(modifier);
+			profile = modifierSheet.GetProfile(modifier);
 		}
 
 		public override void Execute(Vector3 direction) {
@@ -23,6 +23,7 @@ namespace Elementure.GameLogic.Words {
 			}
 
 			agent.transform.position += direction * agent.Attributes.Speed * Time.deltaTime;
+			cooldownTimer = agent.Attributes.Cooldown;
 		}
 	}
 

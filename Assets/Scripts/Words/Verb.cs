@@ -16,7 +16,7 @@ namespace Elementure.GameLogic.Words {
 
 		protected Agent agent;
 		protected ModifierTypes modifier;
-		protected ModifierProfile currentProfile;
+		protected ModifierProfile profile;
 		
 		protected float cooldownTimer;
 
@@ -26,7 +26,7 @@ namespace Elementure.GameLogic.Words {
 		
 		public abstract void LoadModifierProfile();
 
-		public void Update() {
+		public virtual void Update() {
 			cooldownTimer -= Time.deltaTime;
 		}
 

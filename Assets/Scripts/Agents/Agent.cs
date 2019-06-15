@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,12 +13,15 @@ namespace Elementure.GameLogic.Agents {
 	[RequireComponent(typeof(Rigidbody))]
 	public class Agent : MonoBehaviour {
 
+		private const string TileTag = "Tile";
+
 		public enum AgentStates {
 			Alive, Dead
 		}
 
 		[SerializeField] protected string id;
 		[SerializeField] AgentAttributeSheet attributes;
+		[SerializeField] Transform feet;
 
 		[Header("Events")]
 		[SerializeField] AgentEvent OnHealed = new AgentEvent();
@@ -32,6 +35,7 @@ namespace Elementure.GameLogic.Agents {
 		public AgentAttributeSheet Attributes { get => attributes; }
 		public AgentStates State { get; protected set; }
 		public Inventory Inventory { get; protected set; }
+		public Rigidbody Body { get; protected set; }
 
 		#region Init
 		private void Awake() {
@@ -42,6 +46,7 @@ namespace Elementure.GameLogic.Agents {
 
 		private void StoreComponents() {
 			Inventory = GetComponent<Inventory>();
+			Body = GetComponent<Rigidbody>();
 		}
 
 		private void Setup() {
@@ -87,6 +92,20 @@ namespace Elementure.GameLogic.Agents {
 		#endregion
 
 		#region Queries
+		public bool IsGrounded() {
+			RaycastHit[] hits = Physics.RaycastAll(feet.position, Vector3.down, 5f);
+
+			if (hits == null || hits.Length <= 0) {
+				return false;
+			}
+
+			RaycastHit hit = hits.FirstOrDefault(h => h.rigidbody.tag == TileTag);
+			if (hit.rigidbody?.gameObject == null) {
+				return false;
+			}
+
+			return hit.distance <= 0.01f;
+		}
 		#endregion
 
 		#region Debug
