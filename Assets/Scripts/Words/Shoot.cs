@@ -8,9 +8,15 @@ namespace Elementure.GameLogic.Words {
 	public class Shoot : Verb {
 
 		protected const string modifierSheetName = "ShootSheet";
+		protected const string projectilePrefabName = "Projectile";
+		protected const float doubleAngle = 35f;
+		protected const float tripleAngle = 60f;
+
+		protected GameObject projectilePrefab;
 
 		public Shoot(ModifierTypes modifier, Agent agent) : base(modifier, agent) {
 			Type = VerbTypes.Shoot;
+			projectilePrefab = (GameObject) Resources.Load(projectilePrefabName) as GameObject;
 		}
 
 		public override void LoadModifierProfile() {
@@ -24,62 +30,106 @@ namespace Elementure.GameLogic.Words {
 			}
 
 			agent.Animator.SetTrigger("Attack");
+			
+			List<Agent> targets = GetTargets(direction);
+			if (targets != null && targets.Count > 0) {
+				ShootAt(GetTargets(direction));
+				return;
+			}
 
-			List<Agent> targets = Modifier == ModifierTypes.Twice ? GetDoubleTargets(direction)
-								  : Modifier == ModifierTypes.Thrice ? GetTripleTargets(direction)
-								  : GetTargets(direction);
-
-			ShootAt(GetTargets(direction));
+			if (Modifier == ModifierTypes.Twice) {
+				ShootDouble(agent.lookingDirection);
+			} else if (Modifier == ModifierTypes.Thrice) {
+				ShootTriple(agent.lookingDirection);
+			} else {
+				SpawnProjectile(agent.lookingDirection);
+			}
 		}
 
-		List<Agent> GetDoubleTargets(Vector3 direction) {
+		void ShootDouble(Vector3 direction) {
 			List<Agent> targets = new List<Agent>();
 
-			Agent rightTarget = GetTarget(Quaternion.Euler(0, -45, 0) * direction);
-			if (rightTarget != null) {
-				targets.Add(rightTarget);
-			}
-
-			Agent leftTarget = GetTarget(Quaternion.Euler(0, 45, 0) * direction);
-			if (leftTarget != null) {
-				targets.Add(leftTarget);
-			}
-
-			return targets;
+			SpawnProjectile(Quaternion.Euler(0, -doubleAngle, 0) * direction);
+			SpawnProjectile(Quaternion.Euler(0, doubleAngle, 0) * direction);
 		}
 
-		List<Agent> GetTripleTargets(Vector3 direction) {
+		void ShootTriple(Vector3 direction) {
 			List<Agent> targets = new List<Agent>();
 
-			Agent rightTarget = GetTarget(Quaternion.Euler(0, -60, 0) * direction);
-			if (rightTarget != null) {
-				targets.Add(rightTarget);
-			}
-
-			Agent frontTarget = GetTarget(direction);
-			if (frontTarget != null) {
-				targets.Add(frontTarget);
-			}
-
-			Agent leftTarget = GetTarget(Quaternion.Euler(0, 60, 0) * direction);
-			if (leftTarget != null) {
-				targets.Add(leftTarget);
-			}
-
-			return targets;
+			SpawnProjectile(Quaternion.Euler(0, -tripleAngle, 0) * direction);
+			SpawnProjectile(direction);
+			SpawnProjectile(Quaternion.Euler(0, tripleAngle, 0) * direction);
 		}
 
 		void ShootAt(List<Agent> targets) {
-
 			for (int i = 0; i < targets.Count; i++) {
-				//SpawnProjectile(targets[i]);
+				Vector3 delta = targets[i].transform.position - agent.transform.position;
+				SpawnProjectile(delta.normalized);
 			}
 		}
 
+		void SpawnProjectile(Vector3 direction) {
+			GameObject projectileObject = GameObject.Instantiate(projectilePrefab);
+			projectileObject.transform.position = agent.transform.position + direction * 1.2f;
 
-		void SpawnProjectile() {
-
+			Projectile projectile = projectileObject.GetComponent<Projectile>();
+			projectile.direction = direction;
+			projectile.SetData(Modifier, profile.damage);
 		}
+
+		#region Debug
+		public override void DrawGizmos(ModifierTypes modifier, Color color, float size) {
+			switch (modifier) {
+				case ModifierTypes.Twice:
+					DrawDoubleShots(color, size);
+					break;
+				case ModifierTypes.Thrice:
+					DrawTripleShots(color, size);
+					break;
+				case ModifierTypes.Area:
+					DrawTripleShots(color, size);
+					break;
+				case ModifierTypes.Us:
+					break;
+				case ModifierTypes.You:
+					break;
+				default:
+					DrawSingleShot(color, size);
+					break;
+			}
+		}
+
+		void DrawArea(Color color) {
+			#if UNITY_EDITOR
+				UnityEditor.Handles.color = color;
+				UnityEditor.Handles.DrawWireDisc(agent.transform.position, Vector3.up, profile.radius);
+			#endif
+		}
+
+		void DrawSingleShot(Color color, float size) {
+			DrawShot(agent.transform.TransformDirection(Vector3.forward), agent.Attributes.AttackDistance * profile.distance, color, size);
+		}
+
+		void DrawDoubleShots(Color color, float size) {
+			Vector3 forward = agent.transform.TransformDirection(Vector3.forward);
+			DrawShot(Quaternion.Euler(0, -doubleAngle, 0) * forward, agent.Attributes.AttackDistance * profile.distance, color, size);
+			DrawShot(Quaternion.Euler(0, doubleAngle, 0) * forward, agent.Attributes.AttackDistance * profile.distance, color, size);
+		}
+
+		void DrawTripleShots(Color color, float size) {
+			Vector3 forward = agent.transform.TransformDirection(Vector3.forward);
+			DrawShot(Quaternion.Euler(0, -tripleAngle, 0) * forward, agent.Attributes.AttackDistance * profile.distance, color, size);
+			DrawShot(forward, agent.Attributes.AttackDistance * profile.distance, color, size);
+			DrawShot(Quaternion.Euler(0, tripleAngle, 0) * forward, agent.Attributes.AttackDistance * profile.distance, color, size);
+		}
+
+		void DrawShot(Vector3 direction, float distance, Color color, float size) {
+			Vector3 endPoint = agent.transform.position + direction * distance;
+			Gizmos.color = color;
+			Gizmos.DrawLine(agent.transform.position, endPoint);
+			Gizmos.DrawWireSphere(endPoint, size);
+		}
+		#endregion
 	}
 
 }
