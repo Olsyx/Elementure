@@ -7,7 +7,7 @@ namespace Elementure.GameLogic.Words {
 
 	public class Walk : Verb {
 
-		protected new string modifierSheetName = "WalkSheet";
+		protected const string modifierSheetName = "WalkSheet";
 
 		public Walk(ModifierTypes modifier, Agent agent) : base(modifier, agent) {
 			Type = VerbTypes.Walk;
@@ -19,6 +19,11 @@ namespace Elementure.GameLogic.Words {
 			}
 
 			agent.transform.position += direction * agent.Attributes.Speed * Time.deltaTime;
+		}
+
+		public override void LoadModifier() {
+			modifierSheet = VerbSheetLoader.Load(modifierSheetName);
+			currentProfile = modifierSheet.GetProfile(modifier);
 		}
 	}
 

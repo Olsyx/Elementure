@@ -10,23 +10,20 @@ namespace Elementure.GameLogic.Words {
 	}
 
 	public abstract class Verb : ScriptableObject {
-		protected VerbModifierSheet modifiers;
-		protected string modifierSheetPath = "Verb Sheets/";
-		protected string modifierSheetName = "";
+		protected VerbSheet modifierSheet;
 
 		public VerbTypes Type { get; protected set; }
 
 		protected Agent agent;
-		protected ModifierTypes currentModifier;
-		protected ModifierProfile modifierProfile;
+		protected ModifierTypes modifier;
+		protected ModifierProfile currentProfile;
 
 
 		public Verb(ModifierTypes modifier, Agent agent) {
 			this.agent = agent;
-			modifiers = ScriptableObject.CreateInstance<VerbModifierSheet>();
-
-			modifierProfile = modifiers.GetProfile(modifier);
 		}
+
+		public abstract void LoadModifier();
 
 		public abstract void Execute(Vector3 direction);
 
