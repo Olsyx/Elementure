@@ -1,4 +1,5 @@
 ﻿using Elementure.GameLogic.Agents;
+using Elementure.GameLogic.Items;
 using Elementure.GameLogic.Words;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +10,8 @@ namespace Elementure.GameLogic {
 	public class Inventory : MonoBehaviour {
 
 		[SerializeField] protected InventorySheet initialInventory;
+		[SerializeField] protected GameObject verbItemPrefab;
+		[SerializeField] protected GameObject modifierItemPrefab;
 
 		protected Agent agent;
 		public Verb VerbMovement { get; protected set; }
@@ -58,10 +61,44 @@ namespace Elementure.GameLogic {
 		#endregion
 
 		#region Actions
-		private void Drop() {
+		public void Drop() {
+			GameObject spawnedMovement = Spawn(VerbMovement);
+			spawnedMovement.transform.position = transform.position + Vector3.back;
 
+			GameObject spawnedA = Spawn(VerbA);
+			if (spawnedA != null) {
+				spawnedA.transform.position = transform.position + Vector3.left;
+			}
 
+			GameObject spawnedB = Spawn(VerbB);
+			if (spawnedB != null) {
+				spawnedB.transform.position = transform.position + Vector3.right;
+			}
 		}
+
+		private GameObject Spawn(Verb verb) {
+			if (verb == null) {
+				return null;
+			}
+
+			int coin = Random.Range(0, 1000) > 500 ? 1 : 0;
+			return (coin == 1) ? SpawnModifierItem(verb.Modifier) : SpawnVerbItem(verb.Type);
+		}
+
+		private GameObject SpawnVerbItem(VerbTypes verb) {
+			GameObject verbObject = Instantiate(verbItemPrefab);
+			VerbItem verbItem = verbObject.GetComponent<VerbItem>();
+			verbItem.SetVerb(verb);
+			return verbObject;
+		}
+
+		private GameObject SpawnModifierItem(ModifierTypes modifier) {
+			GameObject modifierObject = Instantiate(modifierItemPrefab);
+			ModifierItem modifierItem = modifierObject.GetComponent<ModifierItem>();
+			modifierItem.SetModifier(modifier);
+			return modifierObject;
+		}
+
 		#endregion
 
 		#region Queries

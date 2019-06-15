@@ -274,3 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialInventory: {fileID: 11400000, guid: 8579099a2a8f85b4980d4d6de66d9168, type: 2}
+  verbItemPrefab: {fileID: 2750323838673094938, guid: 73c4fea04dec69c41ac764d103fc7dbe,
+    type: 3}
+  modifierItemPrefab: {fileID: 8162352120531719798, guid: 9cfd9d15c420bd440b9130c30a6e3a39,
+    type: 3}

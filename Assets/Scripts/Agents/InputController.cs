@@ -12,7 +12,6 @@ namespace Elementure.GameLogic {
 		protected Agent self;
 
 		public bool Initialized { get; protected set; }
-		Vector3 movementDirection, lookingDirection;
 
 		#region Init
 		private void Awake() {
@@ -50,26 +49,26 @@ namespace Elementure.GameLogic {
 
 			SetMovementDirection();
 
-			if (movementDirection.magnitude > 0.001f) {
-				lookingDirection = movementDirection;
-				self.Inventory?.VerbMovement.Execute(movementDirection);
+			if (self.movementDirection.magnitude > 0.001f) {
+				self.lookingDirection = self.movementDirection;
+				self.Inventory?.VerbMovement.Execute(self.movementDirection);
 				//self.Inventory.quickMenu.Close()
 			} 
 
 			if (Input.GetButton("A")) {
-				self.Inventory.VerbA?.Trigger(lookingDirection);
+				self.Inventory.VerbA?.Trigger(self.lookingDirection);
 			}
 
 			if (Input.GetButton("B")) {
-				self.Inventory.VerbB?.Trigger(lookingDirection);
+				self.Inventory.VerbB?.Trigger(self.lookingDirection);
 			}
 		}
 
 		private void SetMovementDirection() {
 			float x = Input.GetAxis("Horizontal");
 			float z = Input.GetAxis("Vertical");
-			movementDirection = new Vector3(x, 0, z);
-			movementDirection = movementDirection.normalized;
+			self.movementDirection = new Vector3(x, 0, z);
+			self.movementDirection = self.movementDirection.normalized;
 		}
 
 		private void OnTriggerEnter(Collider other) {

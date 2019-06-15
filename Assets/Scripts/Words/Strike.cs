@@ -15,7 +15,7 @@ namespace Elementure.GameLogic.Words {
 
 		public override void LoadModifierProfile() {
 			modifierSheet = VerbManager.LoadProfile(modifierSheetName);
-			profile = modifierSheet.GetProfile(modifier);
+			profile = modifierSheet.GetProfile(Modifier);
 		}
 
 		public override void Execute(Vector3 direction) {
@@ -26,7 +26,7 @@ namespace Elementure.GameLogic.Words {
 			agent.Animator.SetTrigger("Attack");
 
 			float distance = agent.Attributes.AttackDistance * profile.distance;
-			switch (modifier) {
+			switch (Modifier) {
 				case ModifierTypes.Area:
 					StrikeArea();
 					break;

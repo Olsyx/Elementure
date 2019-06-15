@@ -13,9 +13,9 @@ namespace Elementure.GameLogic.Words {
 		protected VerbSheet modifierSheet;
 
 		public VerbTypes Type { get; protected set; }
+		public ModifierTypes Modifier { get; protected set; }
 
 		protected Agent agent;
-		protected ModifierTypes modifier;
 		protected ModifierProfile profile;
 		
 		protected float cooldownTimer;
@@ -42,7 +42,7 @@ namespace Elementure.GameLogic.Words {
 		public abstract void Execute(Vector3 direction);
 
 		public void SetModifier(ModifierTypes newModifier) {
-			modifier = newModifier;
+			Modifier = newModifier;
 			LoadModifierProfile();
 		}
 

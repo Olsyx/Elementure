@@ -55,15 +55,21 @@ namespace Elementure.GameLogic.Behaviours {
 		protected void Idle() {
 			float x = Random.Range(-1f, 1f);
 			float z = Random.Range(-1f, 1f);
-			Vector3 movementDirection = new Vector3(x, 0, z);
-			self.Inventory.VerbMovement.Trigger(movementDirection.normalized);
+			self.movementDirection = new Vector3(x, 0, z);
+			if (self.movementDirection.magnitude > 0) {
+				self.lookingDirection = self.movementDirection;
+			}
+			self.Inventory.VerbMovement.Trigger(self.movementDirection.normalized);
 		}
 
 		protected void Follow(Transform target) {
 			float x = target.transform.position.x - transform.position.x;
 			float z = target.transform.position.z - transform.position.z;
-			Vector3 movementDirection = new Vector3(x, 0, z);
-			self.Inventory.VerbMovement.Execute(movementDirection.normalized);
+			self.movementDirection = new Vector3(x, 0, z);
+			if (self.movementDirection.magnitude > 0) {
+				self.lookingDirection = self.movementDirection;
+			}
+			self.Inventory.VerbMovement.Execute(self.movementDirection.normalized);
 		}
 		#endregion
 

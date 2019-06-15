@@ -40,6 +40,8 @@ namespace Elementure.GameLogic.Agents {
 		public BoxCollider Collider { get; protected set; }
 		public Animator Animator { get => animator; }
 
+		[NonSerialized] public Vector3 movementDirection, lookingDirection;
+
 		#region Init
 		private void Awake() {
 			Initialized = false;
@@ -102,7 +104,7 @@ namespace Elementure.GameLogic.Agents {
 
 		public void Disappear() {
 			AgentManager.Remove(this);
-			Destroy(this.gameObject);
+			Destroy(this.gameObject, 1f);
 		}
 		#endregion
 

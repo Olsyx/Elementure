@@ -10,7 +10,7 @@ public class Float : MonoBehaviour {
 	protected Vector3 startPoint;
 	protected bool up;
 
-	private void Awake() {
+	private void Start() {
 		startPoint = transform.position;	
 	}
 

@@ -117,6 +117,28 @@ MonoBehaviour:
           m_StringArgument: Die
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1999772396128175274}
+        m_MethodName: Drop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1999772396128175270}
+        m_MethodName: Disappear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Elementure.GameLogic.Agents.AgentEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1999772396128175268
@@ -144,6 +166,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialInventory: {fileID: 11400000, guid: 792210526a7e5224499d10cdb94c139a, type: 2}
+  verbItemPrefab: {fileID: 2750323838673094938, guid: 73c4fea04dec69c41ac764d103fc7dbe,
+    type: 3}
+  modifierItemPrefab: {fileID: 8162352120531719798, guid: 9cfd9d15c420bd440b9130c30a6e3a39,
+    type: 3}
 --- !u!1 &3202249737792725364
 GameObject:
   m_ObjectHideFlags: 0

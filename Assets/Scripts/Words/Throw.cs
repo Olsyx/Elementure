@@ -15,7 +15,7 @@ namespace Elementure.GameLogic.Words {
 
 		public override void LoadModifierProfile() {
 			modifierSheet = VerbManager.LoadProfile(modifierSheetName);
-			profile = modifierSheet.GetProfile(modifier);
+			profile = modifierSheet.GetProfile(Modifier);
 		}
 
 		public override void Execute(Vector3 direction) {

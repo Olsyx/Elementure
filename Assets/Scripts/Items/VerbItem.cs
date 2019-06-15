@@ -12,9 +12,17 @@ namespace Elementure.GameLogic.Items {
 		public Text verbText;
 
 		private void Awake() {
-			verbText.text = verb.ToString();
+			UpdateGUI();
 		}
 
+		public void SetVerb(VerbTypes verb) {
+			this.verb = verb;
+			UpdateGUI();
+		}
+
+		private void UpdateGUI() {
+			verbText.text = verb.ToString();
+		}
 		public override void ApplyTo(Agent agent) {
 			// TODO: agent.Inventory.OpenVerbQuickMenu();
 		}
