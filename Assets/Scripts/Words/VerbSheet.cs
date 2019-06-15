@@ -13,21 +13,19 @@ namespace Elementure.GameLogic.Words {
 		public float speed = 1f;
 		public float damage = 1f;
 		public float radius = 1f;
-		public GameObject prefab;
 	}
-
-	[CreateAssetMenu(fileName = "VerbModifierSheet", menuName = "Elementure/Verb Modifier Sheet", order = 1)]
-	public class VerbModifierSheet : ScriptableObject {
-		[SerializeField] protected ModifierProfile none;
-		[SerializeField] protected ModifierProfile fire;
-		[SerializeField] protected ModifierProfile water;
-		[SerializeField] protected ModifierProfile air;
-		[SerializeField] protected ModifierProfile twice;
-		[SerializeField] protected ModifierProfile thrice;
-		[SerializeField] protected ModifierProfile area;
-		[SerializeField] protected ModifierProfile me;
-		[SerializeField] protected ModifierProfile you;
-		[SerializeField] protected ModifierProfile us;
+	
+	public class VerbSheet {
+		public ModifierProfile none = new ModifierProfile();
+		public ModifierProfile fire = new ModifierProfile();
+		public ModifierProfile water = new ModifierProfile();
+		public ModifierProfile air = new ModifierProfile();
+		public ModifierProfile twice = new ModifierProfile();
+		public ModifierProfile thrice = new ModifierProfile();
+		public ModifierProfile area = new ModifierProfile();
+		public ModifierProfile me = new ModifierProfile();
+		public ModifierProfile you = new ModifierProfile();
+		public ModifierProfile us = new ModifierProfile();
 
 		public ModifierProfile GetProfile(ModifierTypes type) {
 			switch (type) {

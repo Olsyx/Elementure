@@ -6,30 +6,48 @@ using UnityEngine;
 namespace Elementure.GameLogic.Words {
 
 	public enum VerbTypes {
-		Walk, Jump, Roll, Teleport, Strike, Shoot, Protect, Throw, Invert
+		None, Walk, Jump, Roll, Teleport, Strike, Shoot, Protect, Throw, Invert
 	}
 
-	public abstract class Verb : ScriptableObject {
-		protected VerbModifierSheet modifiers;
-		protected string modifierSheetPath = "Verb Sheets/";
-		protected string modifierSheetName = "";
+	public abstract class Verb {
+		protected VerbSheet modifierSheet;
 
 		public VerbTypes Type { get; protected set; }
 
 		protected Agent agent;
-		protected ModifierTypes currentModifier;
-		protected ModifierProfile modifierProfile;
-
+		protected ModifierTypes modifier;
+		protected ModifierProfile currentProfile;
+		
+		protected float cooldownTimer;
 
 		public Verb(ModifierTypes modifier, Agent agent) {
 			this.agent = agent;
-			modifiers = ScriptableObject.CreateInstance<VerbModifierSheet>();
+		}
+		
+		public abstract void LoadModifierProfile();
 
-			modifierProfile = modifiers.GetProfile(modifier);
+		public void Update() {
+			cooldownTimer -= Time.deltaTime;
+		}
+
+		public void Trigger(Vector3 direction) {
+			if (cooldownTimer > 0f) {
+				return;
+			}
+			cooldownTimer = agent.Attributes.Cooldown;
+			Execute(direction);
 		}
 
 		public abstract void Execute(Vector3 direction);
 
+		public void SetModifier(ModifierTypes newModifier) {
+			modifier = newModifier;
+			LoadModifierProfile();
+		}
+
+		public bool IsMovementType() {
+			return Type == VerbTypes.Walk || Type == VerbTypes.Jump || Type == VerbTypes.Roll;
+		}
 	}
 
 }

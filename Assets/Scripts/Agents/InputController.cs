@@ -47,14 +47,37 @@ namespace Elementure.GameLogic {
 				return;
 			}
 
-			ProcessInput();
-			self.Inventory?.Move(movementDirection);
+			SetMovementDirection();
+
+			if (movementDirection.magnitude > 0.001f) {
+				self.Inventory?.VerbMovement.Execute(movementDirection);
+				//self.Inventory.quickMenu.Close()
+			} 
+
+			if (Input.GetButton("A")) {
+				self.Inventory.VerbA?.Trigger(movementDirection);
+			}
+
+			if (Input.GetButton("B")) {
+				self.Inventory.VerbB?.Trigger(movementDirection);
+			}
 		}
 
-		private void ProcessInput() {
+		private void SetMovementDirection() {
 			float x = Input.GetAxis("Horizontal");
 			float z = Input.GetAxis("Vertical");
 			movementDirection = new Vector3(x, 0, z);
+		}
+
+		private void OnTriggerEnter(Collider other) {
+			// Detect word
+			// Not word => exit
+
+			// Word => self.Inventory.quickMenu.Open(wordType)
+		}
+
+		private void OnTriggerExit(Collider other) {
+			//self.Inventory.quickMenu.Close();
 		}
 		#endregion
 

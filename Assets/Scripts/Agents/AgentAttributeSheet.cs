@@ -5,7 +5,6 @@ using UnityEngine;
 namespace Elementure {
 	[CreateAssetMenu(fileName = "AgentAttributeSheet", menuName = "Elementure/Agent Attribute Sheet", order = 1)]
 	public class AgentAttributeSheet : ScriptableObject {
-		[SerializeField] protected string id;
 		//[SerializeField] protected Modifier raceModifier;
 		[SerializeField] protected int maxHealth = 10;
 		[SerializeField] protected int speed = 1;
