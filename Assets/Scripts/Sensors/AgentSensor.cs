@@ -8,10 +8,10 @@ public abstract class AgentSensor : MonoBehaviour
     [SerializeField]
     public RoomController roomID;
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
 
-        //Debug.Log(other.gameObject.GetComponent<Agent>().);
+        Debug.Log(other.gameObject.GetComponent<Agent>().Id);
         Activate();
     }
 
