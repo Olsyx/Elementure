@@ -14,13 +14,13 @@ namespace Elementure.GameLogic.Words {
 		protected Vector3 jumpingPoint;
 		protected Vector3 jumpingDirection;
 		protected bool peakReached;
-		protected float height = 3f;
+		protected float height = 1.5f;
 		protected float distance;
 		protected float horizontalSpeed;
 		protected float verticalSpeed;
 
 		public Jump(ModifierTypes modifier, Agent agent) : base(modifier, agent) {
-			Type = VerbTypes.Teleport;
+			Type = VerbTypes.Jump;
 		}
 
 		public override void LoadModifierProfile() {
@@ -43,7 +43,6 @@ namespace Elementure.GameLogic.Words {
 			verticalSpeed = (2 * height) / time;
 			peakReached = false;
 
-			agent.Body.isKinematic = true;
 			agent.Body.useGravity = false;
 
 			jumping = true;
@@ -55,21 +54,24 @@ namespace Elementure.GameLogic.Words {
 				return;
 			}
 
-			if (agent.IsGrounded()) {
+			if (peakReached && agent.IsGrounded()) {
 				EndJump();
 			}
 
-			Vector3 movement = jumpingDirection * horizontalSpeed;
-			movement += (peakReached ? Vector3.down : Vector3.up) * verticalSpeed;
+			agent.transform.position += jumpingDirection * horizontalSpeed * 0.5f * Time.deltaTime;
 
-			agent.transform.position += movement * Time.deltaTime;
+			if (peakReached) {
+				return;
+			}
+
+			agent.transform.position += Vector3.up * verticalSpeed * Time.deltaTime;
+			peakReached = (agent.transform.position.y - jumpingPoint.y) >= height;
+			agent.Body.useGravity = peakReached;
 		}
 
 		private void EndJump() {
 			jumping = false;
 			cooldownTimer = agent.Attributes.Cooldown;
-			agent.Body.isKinematic = false;
-			agent.Body.useGravity = true;
 		}
 
 	}
