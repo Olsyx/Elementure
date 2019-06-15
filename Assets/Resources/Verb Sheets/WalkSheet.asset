@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419697d24f5ee2b4590d0f8962b4d368, type: 3}
+  m_Name: WalkSheet
+  m_EditorClassIdentifier: 
+  verbType: 0
+  none:
+    speed: 1
+    damage: 1
+    radius: 1
+    prefab: {fileID: 0}
+  fire:
+    speed: 1
+    damage: 1
+    radius: 1
+    prefab: {fileID: 0}
+  water:
+    speed: 1
+    damage: 1
+    radius: 1
+    prefab: {fileID: 0}
+  air:
+    speed: 1
+    damage: 1
+    radius: 1
+    prefab: {fileID: 0}
+  twice:
+    speed: 1
+    damage: 1
+    radius: 1
+    prefab: {fileID: 0}
+  thrice:
+    speed: 1
+    damage: 1
+    radius: 1
+    prefab: {fileID: 0}
+  area:
+    speed: 1
+    damage: 1
+    radius: 1
+    prefab: {fileID: 0}
+  me:
+    speed: 1
+    damage: 1
+    radius: 1
+    prefab: {fileID: 0}
+  you:
+    speed: 1
+    damage: 1
+    radius: 1
+    prefab: {fileID: 0}
+  us:
+    speed: 1
+    damage: 1
+    radius: 1
+    prefab: {fileID: 0}
