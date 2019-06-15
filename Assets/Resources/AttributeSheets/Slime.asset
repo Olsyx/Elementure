@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98608f12cc5523b47b325d01a50fdfc1, type: 3}
   m_Name: Slime
   m_EditorClassIdentifier: 
+  raceModifier: 0
   maxHealth: 3
   speed: 0.2
+  walkDistance: 1
   sightDistance: 3
-  attackDistance: 1.75
+  attackDistance: 1.5
   cooldown: 3

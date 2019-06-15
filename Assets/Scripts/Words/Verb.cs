@@ -17,7 +17,7 @@ namespace Elementure.GameLogic.Words {
 
 		protected Agent agent;
 		protected ModifierProfile profile;
-		
+
 		protected float cooldownTimer;
 
 		#region Init
@@ -108,6 +108,11 @@ namespace Elementure.GameLogic.Words {
 			return AgentManager.GetAllAgents();
 		}
 		#endregion
-	}
 
+		#region Debug
+		public virtual void DrawGizmos(ModifierTypes modifier, Color color, float size) {
+		}
+		#endregion
+
+	}
 }
