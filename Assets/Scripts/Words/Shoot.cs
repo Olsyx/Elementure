@@ -25,8 +25,8 @@ namespace Elementure.GameLogic.Words {
 
 			agent.Animator.SetTrigger("Attack");
 
-			List<Agent> targets = modifier == ModifierTypes.Twice ? GetDoubleTargets(direction)
-								  : modifier == ModifierTypes.Thrice ? GetTripleTargets(direction)
+			List<Agent> targets = Modifier == ModifierTypes.Twice ? GetDoubleTargets(direction)
+								  : Modifier == ModifierTypes.Thrice ? GetTripleTargets(direction)
 								  : GetTargets(direction);
 
 			ShootAt(GetTargets(direction));
