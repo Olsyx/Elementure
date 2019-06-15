@@ -37,11 +37,13 @@ namespace Elementure.GameLogic.Agents {
 		public AgentStates State { get; protected set; }
 		public Inventory Inventory { get; protected set; }
 		public Rigidbody Body { get; protected set; }
+		public BoxCollider Collider { get; protected set; }
 		public Animator Animator { get => animator; }
 
 		#region Init
 		private void Awake() {
 			Initialized = false;
+			AgentManager.Register(this);
 			StoreComponents();
 			Setup();
 		}
@@ -49,6 +51,7 @@ namespace Elementure.GameLogic.Agents {
 		private void StoreComponents() {
 			Inventory = GetComponent<Inventory>();
 			Body = GetComponent<Rigidbody>();
+			Collider = GetComponent<BoxCollider>();
 		}
 
 		private void Setup() {
@@ -74,6 +77,10 @@ namespace Elementure.GameLogic.Agents {
 
 		#region Actions
 		public void Damage(int points) {
+			if (points <= 0) {
+				return;
+			}
+
 			currentHealth -= points;
 			OnDamaged?.Invoke(this);
 

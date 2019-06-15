@@ -68,8 +68,8 @@ namespace Elementure.GameLogic.Behaviours {
 		#endregion
 
 		#region Queries
-		public bool IsInSight(Transform target) {
-			return Vector3.Distance(target.position, transform.position) < self.Attributes.SightDistance;
+		public bool IsInSight(Agent target) {
+			return target.State == Agent.AgentStates.Alive && Vector3.Distance(target.transform.position, transform.position) < self.Attributes.SightDistance;
 		}
 
 		public bool IsInAttackDistance(Transform target) {

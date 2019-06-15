@@ -14,7 +14,7 @@ namespace Elementure.GameLogic.Behaviours {
 		}
 
 		protected override void ExecuteBehaviour() {
-			if (!IsInSight(player.transform)) {
+			if (!IsInSight(player)) {
 				Idle();
 				return;
 			}
@@ -25,7 +25,7 @@ namespace Elementure.GameLogic.Behaviours {
 			}
 
 			Vector3 direction = player.transform.position - transform.position;
-			self.Inventory.VerbA.Execute(direction.normalized);
+			self.Inventory.VerbA.Trigger(direction.normalized);
 		}
 	}
 

@@ -35,8 +35,8 @@ namespace Elementure.GameLogic.Words {
 			if (cooldownTimer > 0f) {
 				return;
 			}
-			cooldownTimer = agent.Attributes.Cooldown;
 			Execute(direction);
+			cooldownTimer = agent.Attributes.Cooldown;
 		}
 
 		public abstract void Execute(Vector3 direction);
