@@ -6,7 +6,7 @@ using Elementure.GameLogic.Agents;
 public class FallSensor : AgentSensor
 {
     [SerializeField]
-    public int damage;
+    public int falldamage;
 
     public Vector3 lastSafePosition;
 
@@ -32,14 +32,26 @@ public class FallSensor : AgentSensor
         {
             case "Player":
 
-                Agent.GetComponent<BoxCollider>().enabled=false;
+                Agent.GetComponent<BoxCollider>().enabled = false;
                 StartCoroutine(Respawn());
                 Debug.Log("Eres el jugador");
                 break;
 
-            default:
+            case "Gorgon":
 
 
+                break;
+
+
+            case "Dragon":
+
+
+                break;
+            case "Djin":
+
+                break;
+
+            case "Slime":
 
                 break;
         }
@@ -53,7 +65,7 @@ public class FallSensor : AgentSensor
 
         Agent.GetComponent<BoxCollider>().enabled = true;
         Debug.Log("Respawn");
-        Agent.transform.position = new Vector3(lastSafePosition.x, lastSafePosition.y+1, lastSafePosition.z);
+        Agent.transform.position = new Vector3(lastSafePosition.x, lastSafePosition.y + 1, lastSafePosition.z);
     }
 
 }
