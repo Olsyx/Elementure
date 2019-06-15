@@ -58,7 +58,10 @@ namespace Elementure.GameLogic {
 		#endregion
 
 		#region Actions
+		private void Drop() {
 
+
+		}
 		#endregion
 
 		#region Queries
