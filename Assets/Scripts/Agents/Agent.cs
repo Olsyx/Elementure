@@ -20,8 +20,9 @@ namespace Elementure.GameLogic.Agents {
 		}
 
 		[SerializeField] protected string id;
-		[SerializeField] AgentAttributeSheet attributes;
-		[SerializeField] Transform feet;
+		[SerializeField] protected AgentAttributeSheet attributes;
+		[SerializeField] protected Transform feet;
+		[SerializeField] protected Animator animator;
 
 		[Header("Events")]
 		[SerializeField] AgentEvent OnHealed = new AgentEvent();
@@ -36,6 +37,7 @@ namespace Elementure.GameLogic.Agents {
 		public AgentStates State { get; protected set; }
 		public Inventory Inventory { get; protected set; }
 		public Rigidbody Body { get; protected set; }
+		public Animator Animator { get => animator; }
 
 		#region Init
 		private void Awake() {
@@ -74,6 +76,7 @@ namespace Elementure.GameLogic.Agents {
 		public void Damage(int points) {
 			currentHealth -= points;
 			OnDamaged?.Invoke(this);
+
 			if (currentHealth <= 0) {
 				State = AgentStates.Dead;
 				OnDead?.Invoke(this);
@@ -100,6 +103,17 @@ namespace Elementure.GameLogic.Agents {
 			}
 			
 			return hits.Any(h => h.distance <= feet.localPosition.magnitude);
+		}
+
+		public TileController GetTile() {
+			RaycastHit[] hits = Physics.RaycastAll(feet.position, Vector3.down, 5f);
+
+			TileController tile = null;
+			int i = 0;
+			while (i < hits.Length && (tile = hits[i].collider.GetComponent<TileController>()) != null) {
+				i++;
+			}
+			return tile;
 		}
 		#endregion
 

@@ -7,12 +7,18 @@ namespace Elementure {
 	public class AgentAttributeSheet : ScriptableObject {
 		//[SerializeField] protected Modifier raceModifier;
 		[SerializeField] protected int maxHealth = 10;
-		[SerializeField] protected int speed = 1;
+		[SerializeField] protected float speed = 1;
+		[SerializeField] protected float walkDistance = 1;
+		[SerializeField] protected float sightDistance = 1;
+		[SerializeField] protected float attackDistance = 1;
 		[SerializeField] protected float cooldown = 3;
 
 		public int MaxHealth { get => maxHealth; }
-		public int Speed { get => speed; }
+		public float Speed { get => speed; }
 		public float Cooldown { get => cooldown; }
+		public float WalkDistance { get => walkDistance; }
+		public float SightDistance { get => sightDistance; }
+		public float AttackDistance { get => attackDistance; }
 	}
 
 }

@@ -49,6 +49,8 @@ namespace Elementure.GameLogic.Words {
 		}
 
 		public override void Update() {
+			agent.Animator?.SetBool("Jumping", jumping);
+
 			if (!jumping) {
 				base.Update();
 				return;

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a46b334b70b1ba4b8d89cdf93262d14, type: 3}
-  m_Name: PlayerInitialInventory
+  m_Name: SlimeInventory
   m_EditorClassIdentifier: 
-  movementType: 1
+  movementType: 3
   movementModifier: 0
-  verbA: 0
-  modifierA: 0
+  verbA: 5
+  modifierA: 6
   verbB: 0
   modifierB: 0

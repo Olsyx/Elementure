@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98608f12cc5523b47b325d01a50fdfc1, type: 3}
-  m_Name: Player
+  m_Name: Slime
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  speed: 3
-  walkDistance: 0.1
-  sightDistance: 1
-  attackDistance: 1
+  maxHealth: 3
+  speed: 0.2
+  sightDistance: 3
+  attackDistance: 1.75
   cooldown: 3

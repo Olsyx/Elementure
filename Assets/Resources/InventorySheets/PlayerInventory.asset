@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98608f12cc5523b47b325d01a50fdfc1, type: 3}
-  m_Name: Player
+  m_Script: {fileID: 11500000, guid: 6a46b334b70b1ba4b8d89cdf93262d14, type: 3}
+  m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  speed: 3
-  walkDistance: 0.1
-  sightDistance: 1
-  attackDistance: 1
-  cooldown: 3
+  movementType: 1
+  movementModifier: 0
+  verbA: 0
+  modifierA: 0
+  verbB: 0
+  modifierB: 0

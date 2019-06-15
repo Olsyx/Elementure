@@ -67,6 +67,7 @@ namespace Elementure.GameLogic {
 			float x = Input.GetAxis("Horizontal");
 			float z = Input.GetAxis("Vertical");
 			movementDirection = new Vector3(x, 0, z);
+			movementDirection = movementDirection.normalized;
 		}
 
 		private void OnTriggerEnter(Collider other) {
