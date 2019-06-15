@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class RoomController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField]
+    public string RoomId;
+    [SerializeField]
+    public List<RoomController> AdjacentRooms;
+
+
+    public void ActivateAdjacentRooms()
     {
-        
+
+        foreach (RoomController room in AdjacentRooms)
+        {
+
+            room.gameObject.SetActive(true);
+
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
 }
