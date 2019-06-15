@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenericTileState : MonoBehaviour
+public abstract class GenericTileState
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public virtual void OnEnteringAState(GenericTileState state) { }
+
+
+
+    public virtual void OnLeavingAState(GenericTileState state) { }
+
+
+    public virtual void Activate() { }
+
 }
