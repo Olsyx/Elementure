@@ -22,6 +22,7 @@ namespace Elementure.GameLogic.Words {
 
 		public Verb(ModifierTypes modifier, Agent agent) {
 			this.agent = agent;
+			LoadModifierProfile();
 		}
 		
 		public abstract void LoadModifierProfile();

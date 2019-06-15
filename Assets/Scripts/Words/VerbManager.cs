@@ -20,20 +20,28 @@ namespace Elementure.GameLogic.Words {
 			switch(type) {
 				case VerbTypes.Walk:
 					return new Walk(modifier, agent);
+
 				case VerbTypes.Jump:
 					return new Jump(modifier, agent);
+
 				case VerbTypes.Roll:
 					return new Roll(modifier, agent);
+
 				case VerbTypes.Teleport:
 					return new Teleport(modifier, agent);
+
 				case VerbTypes.Strike:
 					return new Strike(modifier, agent);
+
 				case VerbTypes.Shoot:
 					return new Shoot(modifier, agent);
+
 				case VerbTypes.Protect:
 					return new Protect(modifier, agent);
+
 				case VerbTypes.Throw:
 					return new Throw(modifier, agent);
+
 				case VerbTypes.Invert:
 					return new Invert(modifier, agent);
 

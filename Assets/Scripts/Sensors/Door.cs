@@ -9,7 +9,6 @@ public class Door : AgentSensor
     [SerializeField]
     public RoomController NextRoom;
 
-
     public override void Activate()
     {
 
