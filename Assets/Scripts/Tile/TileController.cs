@@ -14,21 +14,27 @@ public class TileController : MonoBehaviour
     [SerializeField]
     public GameObject Model;
 
-
-    private 
+    private Vector3 currentAngle;
+    private Vector3 targetAngle = new Vector3(0,0,0);
+    
 
     void Start()
     {
 
-        ChangeState(TileStates.Water);
+        ChangeState(TileStates.Fire);
 
-      
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        currentAngle = new Vector3(
+             Mathf.LerpAngle(currentAngle.x, targetAngle.x, (1* Time.deltaTime)),
+             Mathf.LerpAngle(currentAngle.y, targetAngle.y, (1 * Time.deltaTime)),
+             Mathf.LerpAngle(currentAngle.z, targetAngle.z, (1 * Time.deltaTime)));
+
+        transform.eulerAngles = currentAngle;
     }
 
 
@@ -38,27 +44,31 @@ public class TileController : MonoBehaviour
         {
             case TileStates.Normal:
 
-                //Model.transform.rotation = Vector3.Lerp()
+                //Model.transform.rotation = Quaternion.Euler(0, 0, 0);
+                targetAngle = new Vector3(0, 0, 0);
 
-                Model.transform.rotation = Quaternion.Euler(0, 0, 0);
 
                 break;
 
             case TileStates.Fire:
 
-                Model.transform.rotation = Quaternion.Euler(-90, -90, 0);
+
+                //Model.transform.rotation = Quaternion.Euler(-90, -90, 0);
+                targetAngle = new Vector3(-90, -90, 0);
 
                 break;
 
             case TileStates.Water:
 
-                Model.transform.rotation = Quaternion.Euler(0, 0, -90);
+                //Model.transform.rotation = Quaternion.Euler(0, 0, -90);
+                targetAngle = new Vector3(0, 0, -90);
 
                 break;
 
             case TileStates.Wind:
 
-                Model.transform.rotation = Quaternion.Euler(90, -90, 0);
+                //Model.transform.rotation = Quaternion.Euler(90, -90, 0);
+                targetAngle = new Vector3(90, -90, 0);
 
                 break;
         }
@@ -66,5 +76,4 @@ public class TileController : MonoBehaviour
 
 
     }
-
 }
