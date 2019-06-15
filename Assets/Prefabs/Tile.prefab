@@ -299,6 +299,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentState: 0
   Model: {fileID: 9140241635641656570}
+  FireSprite: {fileID: 8788183908328872025}
+  WaterSprite: {fileID: 4853996907261368737}
+  NormalSprite: {fileID: 4517154720022448195}
+  AirSprite: {fileID: 8991378087084805950}
 --- !u!1 &8788183908328872025
 GameObject:
   m_ObjectHideFlags: 0

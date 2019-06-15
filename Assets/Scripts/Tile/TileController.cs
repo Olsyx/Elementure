@@ -14,17 +14,23 @@ public class TileController : MonoBehaviour
     [SerializeField]
     public GameObject Model;
 
+    [SerializeField]
+    public GameObject FireSprite;
+
+    [SerializeField]
+    public GameObject WaterSprite;
+
+    [SerializeField]
+    public GameObject NormalSprite;
+
+    [SerializeField]
+    public GameObject AirSprite;
+
+
     private Vector3 currentAngle;
     private Vector3 targetAngle = new Vector3(0,0,0);
     
 
-    void Start()
-    {
-
-        ChangeState(TileStates.Fire);
-
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -44,14 +50,24 @@ public class TileController : MonoBehaviour
         {
             case TileStates.Normal:
 
+                //NormalSprite.SetActive(true);
+                //FireSprite.SetActive(false);
+                //AirSprite.SetActive(false);
+                //WaterSprite.SetActive(false);
+
                 //Model.transform.rotation = Quaternion.Euler(0, 0, 0);
                 targetAngle = new Vector3(0, 0, 0);
+
 
 
                 break;
 
             case TileStates.Fire:
 
+                //NormalSprite.SetActive(false);
+                //FireSprite.SetActive(true);
+                //AirSprite.SetActive(false);
+                //WaterSprite.SetActive(false);
 
                 //Model.transform.rotation = Quaternion.Euler(-90, -90, 0);
                 targetAngle = new Vector3(-90, -90, 0);
@@ -60,12 +76,22 @@ public class TileController : MonoBehaviour
 
             case TileStates.Water:
 
+                //NormalSprite.SetActive(false);
+                //FireSprite.SetActive(false);
+                //AirSprite.SetActive(false);
+                //WaterSprite.SetActive(true);
+
                 //Model.transform.rotation = Quaternion.Euler(0, 0, -90);
                 targetAngle = new Vector3(0, 0, -90);
 
                 break;
 
             case TileStates.Wind:
+
+                //NormalSprite.SetActive(false);
+                //FireSprite.SetActive(false);
+                //AirSprite.SetActive(true);
+                //WaterSprite.SetActive(false);
 
                 //Model.transform.rotation = Quaternion.Euler(90, -90, 0);
                 targetAngle = new Vector3(90, -90, 0);
