@@ -8,11 +8,12 @@ namespace Elementure.GameLogic {
 	[RequireComponent(typeof(Agent))]
 	public class Inventory : MonoBehaviour {
 
-		[SerializeField] protected int maxVerbs = 3;
+		[SerializeField] protected InventorySheet initialInventory;
 
 		protected Agent agent;
-		protected Verb movementVerb;
-		protected List<Verb> verbs = new List<Verb>();
+		public Verb VerbMovement { get; protected set; }
+		public Verb VerbA { get; protected set; }
+		public Verb VerbB { get; protected set; }
 
 		public bool Initialized { get; protected set; }
 
@@ -28,7 +29,10 @@ namespace Elementure.GameLogic {
 		}
 
 		private void Setup() {
-			movementVerb = new Walk(ModifierTypes.None, agent);
+			VerbMovement = VerbManager.GetVerb(agent, initialInventory.movementType, initialInventory.movementModifier);
+			VerbMovement = VerbMovement ?? new Walk(ModifierTypes.None, agent);
+			VerbA = VerbManager.GetVerb(agent, initialInventory.verbA, initialInventory.modifierA);
+			VerbB = VerbManager.GetVerb(agent, initialInventory.verbB, initialInventory.modifierB);
 		}
 
 		private void Start() {
@@ -46,12 +50,15 @@ namespace Elementure.GameLogic {
 		#endregion
 
 		#region Control
+		private void Update() {
+			VerbMovement?.Update();
+			VerbA?.Update();
+			VerbB?.Update();
+		}
 		#endregion
 
 		#region Actions
-		public void Move(Vector3 movementDirection) {
-			movementVerb.Execute(movementDirection);
-		}
+
 		#endregion
 
 		#region Queries
