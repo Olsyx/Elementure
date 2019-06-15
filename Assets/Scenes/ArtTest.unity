@@ -682,6 +682,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 337214538}
+    - target: {fileID: 8470066098344133599, guid: b7e9f0e1ed47f4b838a8aa9d17210912,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470066098344133599, guid: b7e9f0e1ed47f4b838a8aa9d17210912,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470066098344133599, guid: b7e9f0e1ed47f4b838a8aa9d17210912,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8470066098070518449, guid: b7e9f0e1ed47f4b838a8aa9d17210912,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -711,6 +726,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -31.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470066097140008689, guid: b7e9f0e1ed47f4b838a8aa9d17210912,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658902947503564005, guid: b7e9f0e1ed47f4b838a8aa9d17210912,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 97
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7e9f0e1ed47f4b838a8aa9d17210912, type: 3}
