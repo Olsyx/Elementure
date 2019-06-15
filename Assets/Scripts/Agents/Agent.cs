@@ -76,12 +76,12 @@ namespace Elementure.GameLogic.Agents {
 		#endregion
 
 		#region Actions
-		public void Damage(int points) {
+		public void Damage(float points) {
 			if (points <= 0) {
 				return;
 			}
 
-			currentHealth -= points;
+			currentHealth -= (int)points;
 			OnDamaged?.Invoke(this);
 
 			if (currentHealth <= 0) {

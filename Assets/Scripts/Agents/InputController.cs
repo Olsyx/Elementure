@@ -73,7 +73,7 @@ namespace Elementure.GameLogic {
 		}
 
 		private void OnTriggerEnter(Collider other) {
-			Item item = other.attachedRigidbody.GetComponent<Item>();
+			Item item = other.GetComponent<Item>();
 			if (item == null) {
 				return;
 			}
