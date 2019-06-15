@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Elementure.GameLogic.Agents;
 
 public abstract class AgentSensor : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public abstract class AgentSensor : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log(other.gameObject.GetType());
+        //Debug.Log(other.gameObject.GetComponent<Agent>().);
         Activate();
     }
 

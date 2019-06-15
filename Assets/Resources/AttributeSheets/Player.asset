@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Player
   maxHealth: 10
-  speed: 1
+  speed: 3
   cooldown: 3

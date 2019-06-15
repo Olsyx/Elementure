@@ -2,33 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public static class GameManager
 {
 
-    [SerializeField]
-    List<RoomController> rooms;
-
-    public GameManager instance;
-
-
-    private void Start()
+    public static void LoadActiveRooms(RoomController NextRoom)
     {
 
-        instance = new GameManager();
+        foreach (RoomController room in NextRoom.AdjacentRooms)
+        {
+
+            room.gameObject.SetActive(true);
+
+        }
+
+
 
     }
 
-    public GameManager()
+    public static void UnloadRooms(RoomController CurrentRoom)
     {
 
-       
-    }
+        foreach(RoomController room in CurrentRoom.AdjacentRooms)
+        {
 
-    public void LoadActiveRooms(RoomController room)
-    {
+            room.gameObject.SetActive(false);
 
-        
-
+        }
 
 
     }
