@@ -27,7 +27,6 @@ public class DamageSensor : AgentSensor
             case "Player":
 
                 Agent.GetComponent<Agent>().Damage(damage);
-               // other.
                 Debug.Log("Eres el jugador");
                 break;
 

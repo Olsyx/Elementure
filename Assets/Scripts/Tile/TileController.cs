@@ -123,8 +123,8 @@ public class TileController : MonoBehaviour
                 targetAngle = new Vector3(90, -90, 0);
 
                 DamageSensor.SetActive(false);
-                FallSensor.SetActive(false);
-                CantWalkSensor.SetActive(true);
+                FallSensor.SetActive(true);
+                CantWalkSensor.SetActive(false);
 
                 break;
         }
