@@ -10,7 +10,7 @@ namespace Elementure.GameLogic.Words {
 		protected const string modifierSheetName = "ShootSheet";
 
 		public Shoot(ModifierTypes modifier, Agent agent) : base(modifier, agent) {
-			Type = VerbTypes.Teleport;
+			Type = VerbTypes.Shoot;
 		}
 
 		public override void LoadModifierProfile() {
@@ -23,7 +23,62 @@ namespace Elementure.GameLogic.Words {
 				return;
 			}
 
-			// TODO
+			agent.Animator.SetTrigger("Attack");
+
+			List<Agent> targets = modifier == ModifierTypes.Twice ? GetDoubleTargets(direction)
+								  : modifier == ModifierTypes.Thrice ? GetTripleTargets(direction)
+								  : GetTargets(direction);
+
+			ShootAt(GetTargets(direction));
+		}
+
+		List<Agent> GetDoubleTargets(Vector3 direction) {
+			List<Agent> targets = new List<Agent>();
+
+			Agent rightTarget = GetTarget(Quaternion.Euler(0, -45, 0) * direction);
+			if (rightTarget != null) {
+				targets.Add(rightTarget);
+			}
+
+			Agent leftTarget = GetTarget(Quaternion.Euler(0, 45, 0) * direction);
+			if (leftTarget != null) {
+				targets.Add(leftTarget);
+			}
+
+			return targets;
+		}
+
+		List<Agent> GetTripleTargets(Vector3 direction) {
+			List<Agent> targets = new List<Agent>();
+
+			Agent rightTarget = GetTarget(Quaternion.Euler(0, -60, 0) * direction);
+			if (rightTarget != null) {
+				targets.Add(rightTarget);
+			}
+
+			Agent frontTarget = GetTarget(direction);
+			if (frontTarget != null) {
+				targets.Add(frontTarget);
+			}
+
+			Agent leftTarget = GetTarget(Quaternion.Euler(0, 60, 0) * direction);
+			if (leftTarget != null) {
+				targets.Add(leftTarget);
+			}
+
+			return targets;
+		}
+
+		void ShootAt(List<Agent> targets) {
+
+			for (int i = 0; i < targets.Count; i++) {
+				//SpawnProjectile(targets[i]);
+			}
+		}
+
+
+		void SpawnProjectile() {
+
 		}
 	}
 
