@@ -13,7 +13,8 @@ namespace Elementure.GameLogic {
 		
 		public bool Initialized { get; protected set; }
 
-		protected float verticalAxis, horizontalAxis;
+		protected bool touchedVertical, touchedHorizontal;
+		protected float verticalAxis = 0, horizontalAxis = 0;
 
 		#region Init
 		private void Awake() {
@@ -67,8 +68,15 @@ namespace Elementure.GameLogic {
 		}
 
 		private void SetMovementDirection() {
-			float x = horizontalAxis == 0 && Input.GetButton("Horizontal") ? Input.GetAxis("Horizontal") : horizontalAxis;
-			float z = verticalAxis == 0 && Input.GetButton("Vertical") ? Input.GetAxis("Vertical") : verticalAxis;
+			float x, z;
+
+			x = Input.GetKey(KeyCode.A) ? -1f
+				: Input.GetKey(KeyCode.D) ? 1f
+				: horizontalAxis;
+			z = Input.GetKey(KeyCode.W) ? 1f
+				: Input.GetKey(KeyCode.S) ? -1f
+				: horizontalAxis;
+
 			ResetAxis();
 			self.movementDirection = new Vector3(x, 0, z);
 			self.movementDirection = self.movementDirection.normalized;
@@ -91,11 +99,13 @@ namespace Elementure.GameLogic {
 
 		#region Actions
 		public void AddToVerticalAxis(float value) {
+			touchedVertical = true;
 			verticalAxis += value;
 			verticalAxis = Mathf.Min(1, verticalAxis);
 		}
 
 		public void AddToHorizontalAxis(float value) {
+			touchedHorizontal = true;
 			horizontalAxis += value;
 			horizontalAxis = Mathf.Min(1, horizontalAxis);
 		}
