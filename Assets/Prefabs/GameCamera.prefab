@@ -355,6 +355,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameWonText: {fileID: 2177594520809152255}
   gameOverText: {fileID: 9068969838856461542}
+  wonAudioId: 
+  lostAudioId: 
 --- !u!1 &3492244716042565954
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,7 +2710,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3582280486088877880}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6401732614562202611}
+        m_MethodName: PushedStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &3582280486146069170
@@ -3231,6 +3244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a475c3606b517714faef2182198b0823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuController: {fileID: 5094289658368166064}
+  inventoryGUI: {fileID: 8385201934207303151}
   movementVerbText: {fileID: 3582280486740421923}
   movementModifierText: {fileID: 3582280486275793342}
   verbAText: {fileID: 3582280486450294293}
@@ -3605,6 +3620,8 @@ MonoBehaviour:
   playerPrefab: {fileID: 2837904276505136041, guid: 7192caddeca582c44bd9e08199c3e522,
     type: 3}
   playerSpawnPoint: {fileID: 0}
+  mainMenuMusic: 
+  gameMusic: 
   mainScreen: {fileID: 8419471063585447814}
   playerStateGUI: {fileID: 1785498104812021281}
   inventoryGUI: {fileID: 8385201934207303151}

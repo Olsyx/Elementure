@@ -9,6 +9,11 @@ using UnityEngine.UI;
 namespace Elementure.GUI { 
 	public class ControlGUI : MenuElement {
 
+		[Header("Menu Controllers")]
+		[SerializeField] protected MenuController menuController;
+		[SerializeField] protected InventoryGUI inventoryGUI;
+
+		[Header("Controls")]
 		[SerializeField] protected Text movementVerbText;
 		[SerializeField] protected Text movementModifierText;
 		[SerializeField] protected Text verbAText;
@@ -47,6 +52,14 @@ namespace Elementure.GUI {
 		public void ButtonB() {
 			input.TriggerB();
 		}
+		
+		public void PushedStart() {
+			if (menuController.GameEnded) {
+				menuController.GoToMainMenu();
+			} else {
+				inventoryGUI.Toggle();
+			}
+		}
 
 		public void DisableButtons() {
 			for (int i = 0; i < buttons.Count; i++) {
@@ -61,6 +74,10 @@ namespace Elementure.GUI {
 		}
 
 		private void Update() {
+			if (Input.GetButtonDown("Start")) {
+				PushedStart();
+			}
+
 			if (player == null) {
 				return;
 			}

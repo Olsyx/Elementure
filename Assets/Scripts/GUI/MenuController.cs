@@ -21,20 +21,15 @@ namespace Elementure.GUI {
 		[SerializeField] protected EndGUI endGUI;
 		
 		public Agent Player { get; protected set; }
+		public bool GameEnded { get; protected set; }
 
 		private void Start() {
 			ShowMainMenu();
 		}
-
-		private void Update() {
-			if (Input.GetButtonDown("Start")) {
-				inventoryGUI.Toggle();
-			}
-		}
-
+		
 		public void NewGame() {
 			SpawnPlayer();
-			Player.OnDead.AddListener(delegate(Agent agent) { GameEnded(false); });
+			Player.OnDead.AddListener(delegate(Agent agent) { EndGame(false); });
 
 			playerStateGUI.StorePlayer(Player);
 			inventoryGUI.StorePlayer(Player);
@@ -56,7 +51,8 @@ namespace Elementure.GUI {
 			Player = playerObject.GetComponent<Agent>();
 		}
 
-		public void GameEnded(bool won) {
+		public void EndGame(bool won) {
+			GameEnded = true;
 			controlGUI.DisableButtons();
 			if (won) {
 				endGUI.ShowGameWon();
