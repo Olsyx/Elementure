@@ -35,6 +35,9 @@ public class TileController : MonoBehaviour
     [SerializeField]
     public GameObject FallSensor;
 
+    [SerializeField]
+    public GameObject DamageWaterSensor;
+
 
 
     private Vector3 currentAngle;
@@ -92,6 +95,7 @@ public class TileController : MonoBehaviour
                 DamageSensor.SetActive(true);
                 FallSensor.SetActive(false);
                 CantWalkSensor.SetActive(false);
+                DamageWaterSensor.SetActive(false);
 
 
                 break;
@@ -105,7 +109,8 @@ public class TileController : MonoBehaviour
 
                 DamageSensor.SetActive(false);
                 FallSensor.SetActive(false);
-                CantWalkSensor.SetActive(true);
+                CantWalkSensor.SetActive(false);
+                DamageWaterSensor.SetActive(true);
 
                 //Model.transform.rotation = Quaternion.Euler(0, 0, -90);
                 targetAngle = new Vector3(0, 0, -90);
@@ -125,6 +130,8 @@ public class TileController : MonoBehaviour
                 DamageSensor.SetActive(false);
                 FallSensor.SetActive(true);
                 CantWalkSensor.SetActive(false);
+                DamageWaterSensor.SetActive(false);
+
 
                 break;
         }
