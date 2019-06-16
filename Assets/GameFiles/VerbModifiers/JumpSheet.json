@@ -6,30 +6,31 @@
         "radius":1.0
     },
     "fire": {
-        "speed": 1.0,
+        "speed": 2.5,
         "distance": 1.0,
         "damage": 1.0,
         "radius": 1.0
     },
     "water": {
-        "speed": 1.0,
+        "speed": 2.0,
         "distance": 1.0,
         "damage": 1.0,
         "radius": 1.0
     },
     "air": {
-        "speed": 1.0,
+        "speed": 3.0,
         "distance": 1.0,
         "damage": 1.0,
         "radius": 1.0
     },
     "twice":{
-        "speed":1.0,
+        "speed":3.0,
+      "distance": 1.0,
         "damage":1.0,
         "radius":1.0
     },
     "thrice": {
-        "speed": 1.0,
+        "speed": 5.0,
         "distance": 1.0,
         "damage": 1.0,
         "radius": 1.0

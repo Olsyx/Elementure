@@ -1,5 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1102 &-7541302872999829161
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Anim_DRAGON_JUMP
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: b10a3476b2a484827b6e9aecde716656, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1107 &-7338019981078896510
 AnimatorStateMachine:
   serializedVersion: 5
@@ -10,17 +36,26 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -6966793430795257603}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_State: {fileID: 1394338335591365500}
+    m_Position: {x: 357.8089, y: 64.87036, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -4262793221457033554}
-    m_Position: {x: 400.48547, y: 146.10434, z: 0}
+    m_State: {fileID: 201304862638767006}
+    m_Position: {x: 367.8089, y: 74.87036, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 815371031350887458}
-    m_Position: {x: 410.48547, y: 156.10434, z: 0}
+    m_State: {fileID: -4852712321641333622}
+    m_Position: {x: 377.8089, y: 84.87036, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 7942522044468411265}
-    m_Position: {x: 420.48547, y: 166.10434, z: 0}
+    m_State: {fileID: 9005793444711687776}
+    m_Position: {x: 387.8089, y: 94.87036, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -7541302872999829161}
+    m_Position: {x: 397.8089, y: 104.87036, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -1075892683132060438}
+    m_Position: {x: 407.8089, y: 114.87036, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -6320410092647482724}
+    m_Position: {x: 417.8089, y: 124.87036, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -30,8 +65,8 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -6966793430795257603}
---- !u!1102 &-6966793430795257603
+  m_DefaultState: {fileID: 1394338335591365500}
+--- !u!1102 &-6320410092647482724
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
@@ -51,20 +86,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 905622ee332614473aaed268cb578f44, type: 2}
+  m_Motion: {fileID: 7400000, guid: ef20173e6e5664894801e8e513dd55a2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-4262793221457033554
+--- !u!1102 &-4852712321641333622
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Anim_DRAGON_DAMAGED
+  m_Name: Anim_DRAGON_DIE
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -77,7 +112,33 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 16c3de5a34f014044b3fe1b8eb32c7f3, type: 2}
+  m_Motion: {fileID: 7400000, guid: f00c6f1c2420b41f8b218d71b8409ee5, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-1075892683132060438
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Anim_DRAGON_ROLL
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 73dd4c871e4064285892cb641e8709cd, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -105,14 +166,14 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &815371031350887458
+--- !u!1102 &201304862638767006
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Anim_DRAGON_DIE
+  m_Name: Anim_DRAGON_DAMAGED
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -125,20 +186,46 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: f00c6f1c2420b41f8b218d71b8409ee5, type: 2}
+  m_Motion: {fileID: 7400000, guid: 16c3de5a34f014044b3fe1b8eb32c7f3, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &7942522044468411265
+--- !u!1102 &1394338335591365500
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Anim_DRAGON_WALK 0
+  m_Name: Anim_DRAGON_ATTACK
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 4a0d92d695af7408dbe533a26907b9fc, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &9005793444711687776
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Anim_DRAGON_IDLE
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
