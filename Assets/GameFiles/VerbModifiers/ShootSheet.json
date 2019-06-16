@@ -2,61 +2,61 @@
     "none": {
         "speed": 1.0,
         "distance": 1.0,
-        "damage":1.0,
+        "damage":0.5,
         "radius":1.0
     },
     "fire": {
-        "speed": 1.0,
+        "speed": 0.5,
         "distance": 1.0,
-        "damage": 1.0,
+        "damage": 2.0,
         "radius": 1.0
     },
     "water": {
-        "speed": 1.0,
+        "speed": 0.5,
         "distance": 1.0,
-        "damage": 1.0,
+        "damage": 1.5,
         "radius": 1.0
     },
     "air": {
-        "speed": 1.0,
+        "speed": 0.9,
         "distance": 1.0,
-        "damage": 1.0,
+        "damage": 1.2,
         "radius": 1.0
     },
     "twice": {
         "speed": 1.0,
-        "distance": 1.0,
-        "damage": 1.0,
+        "distance": 2.0,
+        "damage": 0.8,
         "radius": 1.0
     },
     "thrice": {
         "speed": 1.0,
-        "distance": 1.0,
-        "damage": 1.0,
+        "distance": 2.0,
+        "damage": 1.2,
         "radius": 1.0
     },
     "area": {
         "speed": 1.0,
         "distance": 1.0,
-        "damage": 1.0,
-        "radius": 1.0
+        "damage": 0.5,
+        "radius": 1.5
     },
     "me": {
         "speed": 1.0,
         "distance": 1.0,
-        "damage": 1.0,
+        "damage": 0.2,
         "radius": 1.0
     },
     "you": {
         "speed": 1.0,
         "distance": 1.0,
-        "damage": 1.0,
+        "damage": 0.8,
         "radius": 1.0
     },
     "us": {
         "speed": 1.0,
         "distance": 1.0,
-        "damage": 1.0,
+        "damage": 0.5,
         "radius": 1.0
     }
 }

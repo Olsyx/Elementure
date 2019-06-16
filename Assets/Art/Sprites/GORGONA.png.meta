@@ -50,6 +50,42 @@ TextureImporter:
   - first:
       213: -427796313273627364
     second: GORGONA_15
+  - first:
+      213: -5596539604169001052
+    second: GORGONA_16
+  - first:
+      213: 7423432799628712642
+    second: GORGONA_17
+  - first:
+      213: 6354143663996235938
+    second: GORGONA_18
+  - first:
+      213: -411950149290624093
+    second: GORGONA_19
+  - first:
+      213: 4834605519733783268
+    second: GORGONA_20
+  - first:
+      213: 368529911344106675
+    second: GORGONA_21
+  - first:
+      213: -182987994288610706
+    second: GORGONA_22
+  - first:
+      213: 263882406745512979
+    second: GORGONA_23
+  - first:
+      213: 3012291138164507644
+    second: GORGONA_24
+  - first:
+      213: -7810672643144830084
+    second: GORGONA_25
+  - first:
+      213: 4584040501920623341
+    second: GORGONA_26
+  - first:
+      213: -8197578606252497997
+    second: GORGONA_27
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -111,7 +147,7 @@ TextureImporter:
     maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,7 +158,7 @@ TextureImporter:
     maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -133,7 +169,7 @@ TextureImporter:
     maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -144,7 +180,7 @@ TextureImporter:
     maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -162,13 +198,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62f2badb921b74be398f65d2dc8c6bdc
+      spriteID: 74e48f86bdfc14e5b9e7790ac6eef5a1
       internalID: 4782189533598389141
       vertices: []
       indices: 
@@ -183,13 +219,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aced4b8b4b082447e96fb375d4479489
+      spriteID: a9f994aa423e641b096e3d84b4fd08b6
       internalID: 3934848955481720235
       vertices: []
       indices: 
@@ -204,13 +240,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6426f97cdc73743cf842d493d07db83e
+      spriteID: dd68356d899a54fb190a1d0aad6c9927
       internalID: 7992591051192471009
       vertices: []
       indices: 
@@ -225,13 +261,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a49ea4308fae94a16b43c70bad24e465
+      spriteID: bc0136f93daea477886ceee45325dfd1
       internalID: 8106902579107780096
       vertices: []
       indices: 
@@ -246,13 +282,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4054a60ba07e04355a10ddf2603bf1df
+      spriteID: fe86b5f4428764893aa37c5055acf048
       internalID: 3518841204336490178
       vertices: []
       indices: 
@@ -267,13 +303,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53c90c823930c4a629486a7c79838999
+      spriteID: 5783e6cb06ef947b5ac19327d161a84e
       internalID: -2969021856907792855
       vertices: []
       indices: 
@@ -288,13 +324,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 821af9d2f103e4463a727f23a6eb8bfb
+      spriteID: 2bc9ff5987f0742d693d82c712933766
       internalID: -3690471336827071085
       vertices: []
       indices: 
@@ -309,13 +345,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7eba07c48f0f41f391f970cac43007f
+      spriteID: d9659fa1a532a4e1eb3fb78c6641b4b7
       internalID: 678608936442257573
       vertices: []
       indices: 
@@ -330,13 +366,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2246057edc2b047e0aee8b2059a85ec3
+      spriteID: 299ab5f0ca8bc4cd6a234c66086b3fd4
       internalID: 4608078273338818012
       vertices: []
       indices: 
@@ -351,13 +387,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 204e9afb4241c4c9c860019d7cdbf411
+      spriteID: 80e9d3530ee194c9c984133f4f094603
       internalID: 462062065995009878
       vertices: []
       indices: 
@@ -372,13 +408,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29124a05775d6403a8d0353045d5ed46
+      spriteID: d81c7e6e0841245cfa3fc7464e7b2d87
       internalID: 5521220102219527873
       vertices: []
       indices: 
@@ -393,13 +429,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a2770bdeba7540c1af444ea0d5c6a9b
+      spriteID: 566114d67e33f47daadadf9c90cddeec
       internalID: 8075668888026657710
       vertices: []
       indices: 
@@ -414,13 +450,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03d2a9eb3f3514dee95c21312469ccef
+      spriteID: ece7c0d9601c5477da11c233790538d3
       internalID: 2169242069115921232
       vertices: []
       indices: 
@@ -435,13 +471,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 875116aaa3f6d4ece8e0438b205db3ee
+      spriteID: 9ae329b51fdce4c0fbeea0fd180e11f4
       internalID: -2919381243236828421
       vertices: []
       indices: 
@@ -456,13 +492,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3581d36f67fe54e5c879c73cee6169e6
+      spriteID: 61afde303af5c4f34aa189246e52ae3a
       internalID: -1092431041027038116
       vertices: []
       indices: 
@@ -477,14 +513,266 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4d21163babbc4f0791f337d68a649e5
+      spriteID: 2ddd3b853e6154b24b05118d25faf4fd
       internalID: -427796313273627364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GORGONA_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3af8bad691fb447cabbd7c3d14835285
+      internalID: -5596539604169001052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GORGONA_17
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e34d7caf9fc6495fbc002b5ed453ed9
+      internalID: 7423432799628712642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GORGONA_18
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8096e9a42fc1742c19b9aa7c6cf1602c
+      internalID: 6354143663996235938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GORGONA_19
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec02390f9bae4fd0937393fbe04d544
+      internalID: -411950149290624093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GORGONA_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8bbe2ee268ec436f879a17dbde6c745
+      internalID: 4834605519733783268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GORGONA_21
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc582ef163ca415996ea58d0eb50801
+      internalID: 368529911344106675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GORGONA_22
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da85724e8dbcb454283037c1eb5b6ed4
+      internalID: -182987994288610706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GORGONA_23
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84af197e316a442bcae9daf12de2caaf
+      internalID: 263882406745512979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GORGONA_24
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d461fe372e704cfd8395b00c0bb5d57
+      internalID: 3012291138164507644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GORGONA_25
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc74a71d2905462eb27355a116a77bc
+      internalID: -7810672643144830084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GORGONA_26
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 971b515812abc4a359f8fd37c40fd382
+      internalID: 4584040501920623341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GORGONA_27
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48963c2c2c254f828c97a31e9a53153
+      internalID: -8197578606252497997
       vertices: []
       indices: 
       edges: []
