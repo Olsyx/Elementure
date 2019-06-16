@@ -47,6 +47,8 @@ namespace Elementure.GameLogic.Words {
 			agent.Body.useGravity = false;
 
 			jumping = true;
+
+			LogToDiary();
 			AudioManager.Play("Jump");
 		}
 
@@ -83,6 +85,17 @@ namespace Elementure.GameLogic.Words {
 			return agent.transform.position + direction * distance;
 		}
 
+		private void LogToDiary() {
+			if (!agent.Id.Equals("Player")) {
+				return;
+			}
+
+			string terrainType = (Modifier == ModifierTypes.Air || Modifier == ModifierTypes.Fire || Modifier == ModifierTypes.Water)
+							? Modifier.ToString()
+							: "earth";
+
+			DiaryLogger.Log($"Slimey jumped from the {terrainType.ToLower()}");
+		}
 	}
 
 }

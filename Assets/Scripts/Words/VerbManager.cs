@@ -58,5 +58,10 @@ namespace Elementure.GameLogic.Words {
 			VerbSheet dummySheet = new VerbSheet();
 			FileManager.WriteTo($"{MODIFIERS_PATH}Dummy.{MODIFIERS_EXTENSION}", JsonConvert.SerializeObject(dummySheet));
 		}
+
+		public static bool IsMovementType(VerbTypes Type) {
+			return Type == VerbTypes.Walk || Type == VerbTypes.Jump || Type == VerbTypes.Roll;
+		}
+
 	}
 }

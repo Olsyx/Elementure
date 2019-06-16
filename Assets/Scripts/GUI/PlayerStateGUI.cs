@@ -1,4 +1,5 @@
-﻿using Elementure.GameLogic.Agents;
+﻿using Elementure.GameLogic;
+using Elementure.GameLogic.Agents;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,7 @@ namespace Elementure.GUI {
 			}
 
 			lifeSlider.value = player.CurrentHealth;
+			diary.text = DiaryLogger.GetLastLog();
 		}
 
 		public override void Show() {

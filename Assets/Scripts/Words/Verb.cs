@@ -53,10 +53,6 @@ namespace Elementure.GameLogic.Words {
 		#endregion
 
 		#region Queries
-		public bool IsMovementType() {
-			return Type == VerbTypes.Walk || Type == VerbTypes.Jump || Type == VerbTypes.Roll;
-		}
-
 		public abstract Vector3 GetEndPosition(Vector3 direction);
 
 		protected List<Agent> GetTargets(Vector3 direction) {

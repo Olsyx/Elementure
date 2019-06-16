@@ -28,7 +28,7 @@ namespace Elementure.GUI {
 		protected VerbTypes targetVerb;
 		protected ModifierTypes targetModifier;
 
-		protected float chooseDelay = 0.5f;
+		protected float chooseDelay = 0.8f;
 		protected float countdown;
 		
 		public override void StorePlayer(Agent player) {
@@ -111,10 +111,15 @@ namespace Elementure.GUI {
 
 			if (State == InventoryState.ChoosingModifier) {
 				player.Inventory.ChangeMovementModifier(targetModifier);
-			} else {
-				player.Inventory.ChangeMovementVerb(targetVerb);
+				EndChoosingState();
+				return;
 			}
-			
+
+			if (!VerbManager.IsMovementType(targetVerb)) {
+				return;
+			}
+
+			player.Inventory.ChangeMovementVerb(targetVerb);
 			EndChoosingState();
 		}
 

@@ -31,7 +31,9 @@ namespace Elementure.GameLogic.Words {
 			}
 
 			agent.Animator.SetTrigger("Attack");
-						
+
+			LogToDiary();
+
 			if (Modifier == ModifierTypes.Twice) {
 				ShootDouble(agent.lookingDirection);
 				return;
@@ -100,6 +102,17 @@ namespace Elementure.GameLogic.Words {
 		
 		public override Vector3 GetEndPosition(Vector3 direction) {
 			return agent.transform.position;
+		}
+
+		private void LogToDiary() {
+			if (!agent.Id.Equals("Player")) {
+				return;
+			}
+
+			string type = Modifier == ModifierTypes.Fire ? " a fire bullet"
+						 : Modifier == ModifierTypes.Water ? " a water bullet"
+						 : "";
+			DiaryLogger.Log($"Slimey shot{type}!");
 		}
 
 		private void PlayAudio() {

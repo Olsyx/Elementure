@@ -64,10 +64,13 @@ namespace Elementure.GUI {
 		public void EndGame(bool won) {
 			GameEnded = true;
 			controlGUI.DisableButtons();
+
 			if (won) {
 				endGUI.ShowGameWon();
+				DiaryLogger.Log("Slimey won!");
 			} else {
 				endGUI.ShowGameOver();
+				DiaryLogger.Log("Slimey died!");
 			}
 		}
 

@@ -40,6 +40,20 @@ namespace Elementure.GameLogic.Words {
 				targets[i].Damage(damage);
 				AdditionalEffects(targets[i]);
 			}
+
+			LogToDiary(targets);
+		}
+
+		private void LogToDiary(List<Agent> targets) {
+			if (!agent.Id.Equals("Player")) {
+				return;
+			}
+
+			string target = (targets.Count == 0) ? "the air"
+							: (targets.Count == 1) ? "an enemy"
+							: "many enemies";
+
+			DiaryLogger.Log($"Slimey struck {target}");
 		}
 
 		public override Vector3 GetEndPosition(Vector3 direction) {

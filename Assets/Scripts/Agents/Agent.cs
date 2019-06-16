@@ -106,11 +106,13 @@ namespace Elementure.GameLogic.Agents {
 			currentHealth -= (int)points;
 			OnDamaged?.Invoke(this);
 
-			if (currentHealth <= 0) {
-				State = AgentStates.Dead;
-				AudioManager.Play(deathAudio);
-				OnDead?.Invoke(this);
+			if (currentHealth > 0) {
+				return;
 			}
+
+			State = AgentStates.Dead;
+			OnDead?.Invoke(this);
+			AudioManager.Play(deathAudio);
 		}
 
 		public void Heal(int points) {

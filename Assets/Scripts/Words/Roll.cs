@@ -40,6 +40,8 @@ namespace Elementure.GameLogic.Words {
 			
 			rolling = true;
 			agent.Animator?.SetBool("Rolling", rolling);
+
+			LogToDiary();
 			AudioManager.Play("Roll");
 		}
 
@@ -52,6 +54,18 @@ namespace Elementure.GameLogic.Words {
 
 			agent.transform.position += direction * speed * Time.deltaTime;
 			rolling = !agent.Colliding && Vector3.Distance(agent.transform.position, startingPoint) < distance;
+		}
+
+		private void LogToDiary() {
+			if (!agent.Id.Equals("Player")) {
+				return;
+			}
+
+			string terrainType = (Modifier == ModifierTypes.Air || Modifier == ModifierTypes.Fire || Modifier == ModifierTypes.Water)
+							? Modifier.ToString()
+							: "land";
+
+			DiaryLogger.Log($"Slimey rolled in the {terrainType.ToLower()}");
 		}
 
 		public override Vector3 GetEndPosition(Vector3 direction) {

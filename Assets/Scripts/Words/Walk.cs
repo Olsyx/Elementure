@@ -37,6 +37,8 @@ namespace Elementure.GameLogic.Words {
 			distance = agent.Attributes.WalkDistance * profile.distance;
 			speed = agent.Attributes.Speed * profile.speed;
 
+			LogToDiary();
+
 			walking = true;
 		}
 
@@ -59,6 +61,18 @@ namespace Elementure.GameLogic.Words {
 			return agent.transform.position + direction * distance;
 		}
 
+		private void LogToDiary() {
+			if (!agent.Id.Equals("Player")) {
+				return;
+			}
+
+			string terrainType = (Modifier == ModifierTypes.Air || Modifier == ModifierTypes.Fire || Modifier == ModifierTypes.Water)
+							? Modifier.ToString()
+							: "land";
+
+			DiaryLogger.Log($"Slimey started to walk through the {terrainType.ToLower()}");
+		}
+		
 		private void PlayAudio() {
 			TileController tile = agent.GetTile();
 			string type = tile != null && (tile.CurrentState == TileStates.Wind || tile.CurrentState == TileStates.Fire || tile.CurrentState == TileStates.Water)
@@ -67,6 +81,7 @@ namespace Elementure.GameLogic.Words {
 
 			AudioManager.Play($"Movement_{type}", true);
 		}
+
 	}
 
 }
