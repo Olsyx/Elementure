@@ -67,8 +67,8 @@ namespace Elementure.GameLogic {
 		}
 
 		private void SetMovementDirection() {
-			float x = horizontalAxis == 0 ? Input.GetAxis("Horizontal") : horizontalAxis;
-			float z = verticalAxis == 0 ? Input.GetAxis("Vertical") : verticalAxis;
+			float x = horizontalAxis == 0 && Input.GetButton("Horizontal") ? Input.GetAxis("Horizontal") : horizontalAxis;
+			float z = verticalAxis == 0 && Input.GetButton("Vertical") ? Input.GetAxis("Vertical") : verticalAxis;
 			ResetAxis();
 			self.movementDirection = new Vector3(x, 0, z);
 			self.movementDirection = self.movementDirection.normalized;
