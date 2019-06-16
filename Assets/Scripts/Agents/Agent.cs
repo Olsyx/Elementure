@@ -4,6 +4,7 @@ using Elementure.GameLogic.Inventories;
 using UnityEngine;
 using UnityEngine.Events;
 using Elementure.Audio;
+using System.Collections.Generic;
 
 namespace Elementure.GameLogic.Agents {
 
@@ -32,14 +33,18 @@ namespace Elementure.GameLogic.Agents {
 		[SerializeField] public AgentEvent OnDead = new AgentEvent();
 
 		protected int currentHealth;
+		protected List<Collider> collisions = new List<Collider>();
+
+		public bool Initialized { get; protected set; }
 
 		public string Id { get => id; }
-		public bool Initialized { get; protected set; }
-		public bool Colliding { get; protected set; }
+		public bool Colliding { get { return collisions.Count > 0; } }
 		public int CurrentHealth { get => currentHealth; }
+
 		public AgentAttributeSheet Attributes { get => attributes; }
 		public AgentStates State { get; protected set; }
 		public Inventory Inventory { get; protected set; }
+
 		public Rigidbody Body { get; protected set; }
 		public BoxCollider Collider { get; protected set; }
 		public Animator Animator { get => animator; }
@@ -81,11 +86,13 @@ namespace Elementure.GameLogic.Agents {
 
 		#region Control
 		private void OnCollisionEnter(Collision collision) {
-			Colliding = true;
+			if (!collisions.Contains(collision.collider)) {
+				collisions.Add(collision.collider);
+			}
 		}
 
 		private void OnCollisionExit(Collision collision) {
-			Colliding = false;
+			collisions.Remove(collision.collider);
 		}
 		#endregion
 
