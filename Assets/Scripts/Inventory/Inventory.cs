@@ -1,11 +1,12 @@
 ﻿using Elementure.GameLogic.Agents;
 using Elementure.GameLogic.Items;
 using Elementure.GameLogic.Words;
+using Elementure.GUI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Elementure.GameLogic {
+namespace Elementure.GameLogic.Inventories {
 	[RequireComponent(typeof(Agent))]
 	public class Inventory : MonoBehaviour {
 
@@ -17,6 +18,8 @@ namespace Elementure.GameLogic {
 		public Verb VerbMovement { get; protected set; }
 		public Verb VerbA { get; protected set; }
 		public Verb VerbB { get; protected set; }
+
+		public InventoryGUI Gui { get; protected set; }
 
 		public bool Initialized { get; protected set; }
 
@@ -49,6 +52,10 @@ namespace Elementure.GameLogic {
 		}
 
 		private void Init() {
+		}
+
+		public void GiveGuiControl(InventoryGUI guiControl) {
+			Gui = guiControl;
 		}
 		#endregion
 
@@ -99,6 +106,29 @@ namespace Elementure.GameLogic {
 			return modifierObject;
 		}
 
+		public void ChangeMovementVerb(VerbTypes verb) {
+			VerbMovement = VerbManager.GetVerb(agent, verb, VerbMovement.Modifier);
+		}
+
+		public void ChangeMovementModifier(ModifierTypes modifier) {
+			VerbMovement.SetModifier(modifier);
+		}
+
+		public void ChangeVerbA(VerbTypes verb) {
+			VerbA = VerbManager.GetVerb(agent, verb, VerbA.Modifier);
+		}
+
+		public void ChangeModifierA(ModifierTypes modifier) {
+			VerbA.SetModifier(modifier);
+		}
+
+		public void ChangeVerbB(VerbTypes verb) {
+			VerbB = VerbManager.GetVerb(agent, verb, VerbB.Modifier);
+		}
+
+		public void ChangeModifierB(ModifierTypes modifier) {
+			VerbB.SetModifier(modifier);
+		}
 		#endregion
 
 		#region Queries

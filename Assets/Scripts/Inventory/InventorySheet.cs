@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Elementure {
+namespace Elementure.GameLogic.Inventories {
 	[CreateAssetMenu(fileName = "InventorySheet", menuName = "Elementure/Inventory Sheet", order = 1)]
 	public class InventorySheet : ScriptableObject {
 		public VerbTypes movementType = VerbTypes.Walk;

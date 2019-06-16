@@ -25,7 +25,7 @@ namespace Elementure.GameLogic.Items {
 		}
 
 		public override void ApplyTo(Agent agent) {
-			// TODO: agent.Inventory.OpenVerbQuickMenu();
+			agent.Inventory.Gui.OpenToChoose(verb);
 		}
 	}
 }

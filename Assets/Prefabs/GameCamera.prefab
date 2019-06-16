@@ -355,8 +355,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameWonText: {fileID: 2177594520809152255}
   gameOverText: {fileID: 9068969838856461542}
-  wonAudioId: 
-  lostAudioId: 
+  wonAudioId: WonAudio
+  lostAudioId: LostAudio
 --- !u!1 &3492244716042565954
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,6 +2909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b43f6ce24947ed439233afcf548b2a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStateGUI: {fileID: 1785498104812021281}
   movementVerbText: {fileID: 3582280486076854350}
   movementModifierText: {fileID: 3582280485539336195}
   verbAText: {fileID: 3582280484901434640}
@@ -3677,8 +3678,8 @@ MonoBehaviour:
   playerPrefab: {fileID: 2837904276505136041, guid: 7192caddeca582c44bd9e08199c3e522,
     type: 3}
   playerSpawnPoint: {fileID: 7802171205403656319}
-  mainMenuMusic: 
-  gameMusic: 
+  mainMenuMusic: MainMenuMusic
+  gameMusic: GameMusic
   mainScreen: {fileID: 8419471063585447814}
   playerStateGUI: {fileID: 1785498104812021281}
   inventoryGUI: {fileID: 8385201934207303151}
