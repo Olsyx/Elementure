@@ -16,5 +16,5 @@ MonoBehaviour:
   movementModifier: 0
   verbA: 5
   modifierA: 6
-  verbB: 0
-  modifierB: 0
+  verbB: 6
+  modifierB: 1

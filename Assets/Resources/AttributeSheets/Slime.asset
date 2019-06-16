@@ -16,6 +16,6 @@ MonoBehaviour:
   maxHealth: 2
   speed: 0.5
   walkDistance: 1
-  sightDistance: 3
+  sightDistance: 5
   attackDistance: 1.5
   cooldown: 5
