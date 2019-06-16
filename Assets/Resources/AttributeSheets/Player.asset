@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   raceModifier: 0
-  maxHealth: 10
+  maxHealth: 25
   speed: 3
   walkDistance: 0.1
   sightDistance: 1
