@@ -50,7 +50,7 @@ namespace Elementure.GameLogic.Words {
 				return;
 			}
 
-			rolling = Vector3.Distance(agent.transform.position, startingPoint) < distance;
+			rolling = !agent.Colliding && Vector3.Distance(agent.transform.position, startingPoint) < distance;
 			agent.transform.position += direction * speed * Time.deltaTime;
 		}
 

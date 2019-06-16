@@ -35,6 +35,7 @@ namespace Elementure.GameLogic.Agents {
 
 		public string Id { get => id; }
 		public bool Initialized { get; protected set; }
+		public bool Colliding { get; protected set; }
 		public int CurrentHealth { get => currentHealth; }
 		public AgentAttributeSheet Attributes { get => attributes; }
 		public AgentStates State { get; protected set; }
@@ -79,6 +80,13 @@ namespace Elementure.GameLogic.Agents {
 		#endregion
 
 		#region Control
+		private void OnCollisionEnter(Collision collision) {
+			Colliding = true;
+		}
+
+		private void OnCollisionExit(Collision collision) {
+			Colliding = false;
+		}
 		#endregion
 
 		#region Actions

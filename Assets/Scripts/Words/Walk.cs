@@ -48,7 +48,7 @@ namespace Elementure.GameLogic.Words {
 				return;
 			}
 
-			walking = Vector3.Distance(agent.transform.position, startingPoint) < distance;
+			walking = !agent.Colliding && Vector3.Distance(agent.transform.position, startingPoint) < distance;
 			agent.transform.position += direction * speed * Time.deltaTime;
 
 			PlayAudio();

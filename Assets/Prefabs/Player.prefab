@@ -212,6 +212,7 @@ MonoBehaviour:
   attributes: {fileID: 11400000, guid: 288b3021183387f4b825c41b9f518021, type: 2}
   feet: {fileID: 6288642997934131332}
   animator: {fileID: 7522697899959952497}
+  deathAudio: Death_None
   OnHealed:
     m_PersistentCalls:
       m_Calls: []
