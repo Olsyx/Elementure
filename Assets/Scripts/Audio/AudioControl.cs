@@ -7,14 +7,13 @@ namespace Elementure.Audio {
 	public class AudioControl : MonoBehaviour {
 		[SerializeField] protected AudioSheet audioSheet;
 
+		protected AudioSource loopSource;
 		protected List<AudioSource> sources = new List<AudioSource>();
 
 		private void Start() {
 			AudioManager.RegisterControl(this);
-			sources = GetComponents<AudioSource>().ToList();
-			if (sources.Count <= 0) {
-				sources.Add(NewSource());
-			}
+			loopSource = NewSource(true);
+			sources.Add(NewSource(false));
 		}
 
 		public void Play(string id) {
@@ -25,7 +24,7 @@ namespace Elementure.Audio {
 
 			AudioSource source = GetFreeSource();
 			if (source == null) {
-				source = NewSource();
+				source = NewSource(false);
 				sources.Add(source);
 			}
 
@@ -33,6 +32,17 @@ namespace Elementure.Audio {
 			source.Play();
 		}
 
+		public void Loop(string id) {
+			AudioClip clip = audioSheet.Get(id);
+			if (clip == null) {
+				return;
+			}
+
+			loopSource.Stop();
+			loopSource.clip = clip;
+			loopSource.Play();
+		}
+		
 		protected AudioSource GetFreeSource() {
 			int i = 0;
 			while (i < sources.Count && sources[i].isPlaying) {
@@ -42,12 +52,13 @@ namespace Elementure.Audio {
 			return i < sources.Count ? sources[i] : null;
 		}
 
-		protected AudioSource NewSource() {
+		protected AudioSource NewSource(bool loop) {
 			AudioSource source = gameObject.AddComponent<AudioSource>();
 			source.playOnAwake = false;
-			source.loop = false;
+			source.loop = loop;
 			return source;
 		}
+
 	}
 
 }

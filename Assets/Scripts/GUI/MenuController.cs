@@ -1,4 +1,5 @@
-﻿using Elementure.GameLogic.Agents;
+﻿using Elementure.Audio;
+using Elementure.GameLogic.Agents;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ namespace Elementure.GUI {
 		[Header("Environment")]
 		[SerializeField] protected GameObject playerPrefab;
 		[SerializeField] protected Transform playerSpawnPoint;
+		[SerializeField] protected string mainMenuMusic = "";
+		[SerializeField] protected string gameMusic = "";
 
 		[Header("Menu Controllers")]
 		[SerializeField] protected MenuElement mainScreen;
@@ -42,6 +45,8 @@ namespace Elementure.GUI {
 			controlGUI.Show();
 
 			mainScreen.Hide();
+
+			AudioManager.Loop(gameMusic);
 		}
 
 		void SpawnPlayer() {
@@ -72,6 +77,7 @@ namespace Elementure.GUI {
 			controlGUI.Hide();
 			controlGUI.DisableButtons();
 			endGUI.Hide();
+			AudioManager.Loop(mainMenuMusic);
 		}
 
 		public void Quit() {

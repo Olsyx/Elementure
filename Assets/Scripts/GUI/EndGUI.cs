@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Elementure.Audio;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ namespace Elementure.GUI {
 
 		[SerializeField] protected GameObject gameWonText;
 		[SerializeField] protected GameObject gameOverText;
+		[SerializeField] protected string wonAudioId = "";
+		[SerializeField] protected string lostAudioId = "";
 
 		private void Start() {
 			gameWonText.SetActive(false);
@@ -17,12 +20,14 @@ namespace Elementure.GUI {
 			Show();
 			gameWonText.SetActive(true);
 			gameOverText.SetActive(false);
+			AudioManager.Play(wonAudioId);
 		}
 
 		public void ShowGameOver() {
 			Show();
 			gameWonText.SetActive(false);
 			gameOverText.SetActive(true);
+			AudioManager.Play(lostAudioId);
 		}
 	}
 }

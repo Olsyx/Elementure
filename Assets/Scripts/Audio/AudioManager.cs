@@ -14,5 +14,9 @@ namespace Elementure.Audio {
 		public static void Play(string id) {
 			audioControl?.Play(id);
 		}
+
+		public static void Loop(string id) {
+			audioControl?.Loop(id);
+		}
 	}
 }
