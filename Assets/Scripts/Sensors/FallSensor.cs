@@ -8,9 +8,9 @@ public class FallSensor : AgentSensor
     [SerializeField]
     public int falldamage;
 
-    public Vector3 lastSafePosition;
+    public Vector3 lookingDirection;
 
-    public GameObject Agent;
+    public Agent Agent;
 
     public override void Activate()
     {
@@ -21,13 +21,10 @@ public class FallSensor : AgentSensor
     {
         base.OnTriggerEnter(other);
 
-        string AgentId = other.GetComponent<Agent>().Id;
-        Agent = other.gameObject;
+        Agent = other.GetComponent<Agent>();
+        string AgentId = Agent.Id;
 
-        lastSafePosition = Agent.transform.position;
-
-        Debug.Log(lastSafePosition);
-
+        lookingDirection = Agent.lookingDirection;
         switch (AgentId)
         {
             case "Player":
@@ -65,7 +62,7 @@ public class FallSensor : AgentSensor
 
         Agent.GetComponent<BoxCollider>().enabled = true;
         Debug.Log("Respawn");
-        Agent.transform.position = new Vector3(lastSafePosition.x, lastSafePosition.y + 1, lastSafePosition.z);
+        Agent.transform.position = gameObject.transform.position - lookingDirection.normalized * 2;
     }
 
 }
