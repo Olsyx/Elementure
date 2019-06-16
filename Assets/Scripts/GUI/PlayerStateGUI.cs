@@ -5,18 +5,18 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace Elementure.GUI {
-	public class PlayerStateGUI : MonoBehaviour {
+	public class PlayerStateGUI : MenuElement {
 		[SerializeField] protected Slider lifeSlider;
 		[SerializeField] protected Text speciesTxt;
-
-		Agent player;
-
+		[SerializeField] protected Text diary;
+		
 		private void Start() {
 			speciesTxt.text = "SLIME";
+			diary.text = "";
 		}
 
-		public void StorePlayer() {
-			player = AgentManager.GetAgent("Player");
+		public override void StorePlayer(Agent player) {
+			base.StorePlayer(player);
 			lifeSlider.maxValue = player.Attributes.MaxHealth;
 		}
 
@@ -28,5 +28,16 @@ namespace Elementure.GUI {
 			lifeSlider.value = player.CurrentHealth;
 		}
 
+		public override void Show() {
+			lifeSlider.gameObject.SetActive(true);
+			speciesTxt.gameObject.SetActive(true);
+			diary.gameObject.SetActive(true);
+		}
+
+		public override void Hide() {
+			lifeSlider.gameObject.SetActive(false);
+			speciesTxt.gameObject.SetActive(false);
+			diary.gameObject.SetActive(false);
+		}
 	}
 }
