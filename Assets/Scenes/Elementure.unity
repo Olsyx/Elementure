@@ -276,6 +276,21 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3582280485872956280, guid: 7a7c05963448249a18a931e374276052,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3582280485872956280, guid: 7a7c05963448249a18a931e374276052,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3582280485872956280, guid: 7a7c05963448249a18a931e374276052,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7360869243874246251, guid: 7a7c05963448249a18a931e374276052,
         type: 3}
       propertyPath: distance
@@ -537,12 +552,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2758905793641216177, guid: 70dc37bdc7fd14932861ad0233ea7d37,
+        type: 3}
+      propertyPath: AdjacentRooms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758905793641216177, guid: 70dc37bdc7fd14932861ad0233ea7d37,
+        type: 3}
+      propertyPath: AdjacentRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 3577283325613696613}
+    - target: {fileID: 2758905793641216177, guid: 70dc37bdc7fd14932861ad0233ea7d37,
+        type: 3}
+      propertyPath: AdjacentRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 3577283325511063399}
     - target: {fileID: 6883255059469457953, guid: 70dc37bdc7fd14932861ad0233ea7d37,
         type: 3}
       propertyPath: NextRoom
       value: 
       objectReference: {fileID: 3577283325104696718}
     - target: {fileID: 710774697131926733, guid: 70dc37bdc7fd14932861ad0233ea7d37,
+        type: 3}
+      propertyPath: NextRoom
+      value: 
+      objectReference: {fileID: 3577283325613696613}
+    - target: {fileID: 4793405129558039562, guid: 70dc37bdc7fd14932861ad0233ea7d37,
+        type: 3}
+      propertyPath: NextRoom
+      value: 
+      objectReference: {fileID: 3577283325104696718}
+    - target: {fileID: 8328631047219448911, guid: 70dc37bdc7fd14932861ad0233ea7d37,
         type: 3}
       propertyPath: NextRoom
       value: 
@@ -616,6 +656,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3056134785498643923, guid: a3ba78a48d592441fb06ffa64ee34396,
+        type: 3}
+      propertyPath: AdjacentRooms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056134785498643923, guid: a3ba78a48d592441fb06ffa64ee34396,
+        type: 3}
+      propertyPath: AdjacentRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 3577283325104696718}
+    - target: {fileID: 3056134785498643923, guid: a3ba78a48d592441fb06ffa64ee34396,
+        type: 3}
+      propertyPath: AdjacentRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 3577283325613696613}
     - target: {fileID: 3087710476147264286, guid: a3ba78a48d592441fb06ffa64ee34396,
         type: 3}
       propertyPath: CurrentState
@@ -656,6 +711,16 @@ PrefabInstance:
       propertyPath: NextRoom
       value: 
       objectReference: {fileID: 3577283325104696718}
+    - target: {fileID: 1991431436967060509, guid: a3ba78a48d592441fb06ffa64ee34396,
+        type: 3}
+      propertyPath: NextRoom
+      value: 
+      objectReference: {fileID: 3577283325104696718}
+    - target: {fileID: 6809819425878343975, guid: a3ba78a48d592441fb06ffa64ee34396,
+        type: 3}
+      propertyPath: NextRoom
+      value: 
+      objectReference: {fileID: 3577283325613696613}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3ba78a48d592441fb06ffa64ee34396, type: 3}
 --- !u!4 &2501718389101960157 stripped
@@ -797,6 +862,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1109419227093138772, guid: 1723bc299357e47149a619afc6e8fc51,
+        type: 3}
+      propertyPath: AdjacentRooms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109419227093138772, guid: 1723bc299357e47149a619afc6e8fc51,
+        type: 3}
+      propertyPath: AdjacentRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 3577283325511063399}
+    - target: {fileID: 1109419227093138772, guid: 1723bc299357e47149a619afc6e8fc51,
+        type: 3}
+      propertyPath: AdjacentRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 3577283325109144625}
     - target: {fileID: 1140854210384956313, guid: 1723bc299357e47149a619afc6e8fc51,
         type: 3}
       propertyPath: CurrentState
@@ -882,6 +962,11 @@ PrefabInstance:
       propertyPath: NextRoom
       value: 
       objectReference: {fileID: 3577283325511063399}
+    - target: {fileID: 450396657572004993, guid: 1723bc299357e47149a619afc6e8fc51,
+        type: 3}
+      propertyPath: NextRoom
+      value: 
+      objectReference: {fileID: 3577283325511063399}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1723bc299357e47149a619afc6e8fc51, type: 3}
 --- !u!1001 &7065130139207830245
@@ -951,6 +1036,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6028475293986090112, guid: b4d12c79bdabb4e9b8c9871c16cde390,
+        type: 3}
+      propertyPath: AdjacentRooms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028475293986090112, guid: b4d12c79bdabb4e9b8c9871c16cde390,
+        type: 3}
+      propertyPath: AdjacentRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 3577283325109144625}
+    - target: {fileID: 6028475293986090112, guid: b4d12c79bdabb4e9b8c9871c16cde390,
+        type: 3}
+      propertyPath: AdjacentRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 3577283325511063399}
     - target: {fileID: 3055362926057901584, guid: b4d12c79bdabb4e9b8c9871c16cde390,
         type: 3}
       propertyPath: roomID
@@ -961,5 +1061,15 @@ PrefabInstance:
       propertyPath: NextRoom
       value: 
       objectReference: {fileID: 3577283325109144625}
+    - target: {fileID: 9012610193013118971, guid: b4d12c79bdabb4e9b8c9871c16cde390,
+        type: 3}
+      propertyPath: NextRoom
+      value: 
+      objectReference: {fileID: 3577283325109144625}
+    - target: {fileID: 6945711038241259924, guid: b4d12c79bdabb4e9b8c9871c16cde390,
+        type: 3}
+      propertyPath: NextRoom
+      value: 
+      objectReference: {fileID: 3577283325511063399}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4d12c79bdabb4e9b8c9871c16cde390, type: 3}
