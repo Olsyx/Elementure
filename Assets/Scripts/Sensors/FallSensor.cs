@@ -39,7 +39,7 @@ public class FallSensor : AgentSensor
 
             case ModifierTypes.Water:
 
-                lookingDirection = Agent.lookingDirection;
+                //lookingDirection = Agent.lookingDirection;
 
                 break;
 
