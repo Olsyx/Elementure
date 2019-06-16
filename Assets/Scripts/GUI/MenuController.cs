@@ -66,11 +66,11 @@ namespace Elementure.GUI {
 			controlGUI.DisableButtons();
 
 			if (won) {
-				endGUI.ShowGameWon();
 				DiaryLogger.Log("Slimey won!");
+				endGUI.ShowGameWon();
 			} else {
+				DiaryLogger.Log("Slimey died...");
 				endGUI.ShowGameOver();
-				DiaryLogger.Log("Slimey died!");
 			}
 		}
 
@@ -91,6 +91,7 @@ namespace Elementure.GUI {
 		}
 
 		public void Restart() {
+			AgentManager.Reset();
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		}
 

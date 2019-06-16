@@ -355,6 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameWonText: {fileID: 2177594520809152255}
   gameOverText: {fileID: 9068969838856461542}
+  endLog: {fileID: 6951885984573164165}
   wonAudioId: WonAudio
   lostAudioId: LostAudio
 --- !u!1 &3492244716042565954

@@ -21,6 +21,10 @@ namespace Elementure.GameLogic.Agents {
 			agents.Remove(agent.Id);
 		}
 
+		public static void Reset() {
+			agents = new Dictionary<string, Agent>();
+		}
+
 		public static Agent GetAgent(string id) {
 			return agents[id];
 		}
