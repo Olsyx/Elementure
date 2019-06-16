@@ -83,6 +83,10 @@ namespace Elementure.GUI {
 		public void PushedStart() {
 			if (menuController.GameEnded) {
 				menuController.Restart();
+
+			} else if (inventoryGUI.IsShowing) {
+				inventoryGUI.EndChoosingState();
+
 			} else {
 				inventoryGUI.Toggle();
 			}

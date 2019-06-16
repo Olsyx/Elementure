@@ -1,4 +1,5 @@
-﻿using Elementure.GameLogic.Agents;
+﻿using Elementure.GameLogic;
+using Elementure.GameLogic.Agents;
 using Elementure.GameLogic.Words;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,6 +27,9 @@ namespace Elementure.GUI {
 		public InventoryState State { get; protected set; }
 		protected VerbTypes targetVerb;
 		protected ModifierTypes targetModifier;
+
+		protected float chooseDelay = 0.5f;
+		protected float countdown;
 		
 		public override void StorePlayer(Agent player) {
 			base.StorePlayer(player);
@@ -43,6 +47,11 @@ namespace Elementure.GUI {
 				return;
 			}
 
+			countdown -= Time.deltaTime;
+			if (countdown > 0) {
+				return;
+			}
+
 			if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0) {
 				ChooseMovement();
 				return;
@@ -55,6 +64,11 @@ namespace Elementure.GUI {
 
 			if (Input.GetButtonDown("B")) {
 				ChooseB();
+				return;
+			}
+
+			if (Input.GetButtonDown("Start")) {
+				EndChoosingState();
 			}
 		}
 
@@ -70,19 +84,24 @@ namespace Elementure.GUI {
 		}
 		
 		public void OpenToChoose(VerbTypes newVerb) {
-			Block();
-			playerStateGUI.Block();
-			State = InventoryState.ChoosingVerb;
+			SetChoosingState(InventoryState.ChoosingVerb);
 			targetVerb = newVerb;
 			playerStateGUI.DiaryLog.text = targetVerb.ToString();
 		}
 
 		public void OpenToChoose(ModifierTypes newModifier) {
-			Block();
-			playerStateGUI.Block();
-			State = InventoryState.ChoosingModifier;
+			SetChoosingState(InventoryState.ChoosingModifier);
 			targetModifier = newModifier;
 			playerStateGUI.DiaryLog.text = targetModifier.ToString();
+		}
+
+		private void SetChoosingState(InventoryState newState) {
+			GameMaster.PauseGame();
+			Show();
+			Block();
+			playerStateGUI.Block();
+			State = newState;
+			countdown = chooseDelay;
 		}
 
 		public void ChooseMovement() {
@@ -96,7 +115,7 @@ namespace Elementure.GUI {
 				player.Inventory.ChangeMovementVerb(targetVerb);
 			}
 			
-			Close();
+			EndChoosingState();
 		}
 
 		public void ChooseA() {
@@ -110,7 +129,7 @@ namespace Elementure.GUI {
 				player.Inventory.ChangeVerbA(targetVerb);
 			}
 
-			Close();
+			EndChoosingState();
 		}
 
 		public void ChooseB() {
@@ -124,14 +143,19 @@ namespace Elementure.GUI {
 				player.Inventory.ChangeVerbB(targetVerb);
 			}
 
-			Close();
+			EndChoosingState();
 		}
 
-		public void Close() {
+		public void EndChoosingState() {
+			if (State == InventoryState.Idle) {
+				return;
+			}
+
 			State = InventoryState.Idle;
 			Unblock();
 			playerStateGUI.Unblock();
 			Hide();
+			GameMaster.ResumeGame();
 		}
 	}
 }

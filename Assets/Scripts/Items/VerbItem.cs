@@ -26,6 +26,7 @@ namespace Elementure.GameLogic.Items {
 
 		public override void ApplyTo(Agent agent) {
 			agent.Inventory.Gui.OpenToChoose(verb);
+			Destroy(this.gameObject);
 		}
 	}
 }
