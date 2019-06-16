@@ -54,7 +54,7 @@ namespace Elementure.GameLogic.Behaviours {
 
 		#region Actions
 		protected void Idle() {
-			Verb movement = self.Inventory.VerbMovement;
+			Verb movementVerb = self.Inventory.VerbMovement;
 			float x = Random.Range(-1f, 1f);
 			float z = Random.Range(-1f, 1f);
 
@@ -63,22 +63,30 @@ namespace Elementure.GameLogic.Behaviours {
 				self.lookingDirection = self.movementDirection;
 			}
 
-			Vector3 endPoint = movement.GetEndPosition(self.movementDirection);
+			Vector3 endPoint = movementVerb.GetEndPosition(self.movementDirection);
 			TileController tile = GetTileAt(endPoint);
-			if (tile == null || !CheckTileAgainstVerb(tile, movement)) {
+			if (tile == null || !CheckTileAgainstVerb(tile, movementVerb)) {
 				return;
 			}
 
-			movement.Trigger(self.movementDirection.normalized);
+			movementVerb.Trigger(self.movementDirection.normalized);
 		}
 
 		protected void Follow(Transform target) {
+			Verb movementVerb = self.Inventory.VerbMovement;
 			float x = target.transform.position.x - transform.position.x;
 			float z = target.transform.position.z - transform.position.z;
 			self.movementDirection = new Vector3(x, 0, z);
 			if (self.movementDirection.magnitude > 0) {
 				self.lookingDirection = self.movementDirection;
 			}
+
+			Vector3 endPoint = movementVerb.GetEndPosition(self.movementDirection);
+			TileController tile = GetTileAt(endPoint);
+			if (tile == null || !CheckTileAgainstVerb(tile, movementVerb)) {
+				return;
+			}
+
 			self.Inventory.VerbMovement.Execute(self.movementDirection.normalized);
 		}
 		#endregion
