@@ -14,7 +14,7 @@ namespace Elementure.GUI {
 		[SerializeField] protected string wonAudioId = "WonAudio";
 		[SerializeField] protected string lostAudioId = "LostAudio";
 
-		private void Start() {
+		private void Awake() {
 			gameWonText.SetActive(false);
 			gameOverText.SetActive(false);
 		}
