@@ -62,6 +62,7 @@ namespace Elementure.GUI {
 		}
 
 		public void GoToMainMenu() {
+			GameEnded = false;
 			Player.Disappear();
 			ShowMainMenu();
 		}
