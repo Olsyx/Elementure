@@ -39,6 +39,7 @@ namespace Elementure.GameLogic.Agents {
 		public Rigidbody Body { get; protected set; }
 		public BoxCollider Collider { get; protected set; }
 		public Animator Animator { get => animator; }
+		public Transform Feet { get => feet; }
 
 		[NonSerialized] public Vector3 movementDirection, lookingDirection;
 

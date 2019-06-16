@@ -36,7 +36,7 @@ namespace Elementure.GameLogic.Words {
 			jumpingPoint = agent.transform.position;
 			jumpingDirection = direction.normalized;
 
-			distance = profile.distance;
+			distance = agent.Attributes.WalkDistance * profile.distance;
 			horizontalSpeed = profile.speed;
 			float time = distance / horizontalSpeed;
 
@@ -74,6 +74,11 @@ namespace Elementure.GameLogic.Words {
 		private void EndJump() {
 			jumping = false;
 			cooldownTimer = agent.Attributes.Cooldown;
+		}
+
+		public override Vector3 GetEndPosition(Vector3 direction) {
+			float distance = agent.Attributes.WalkDistance * profile.distance;
+			return agent.transform.position + direction * distance;
 		}
 
 	}

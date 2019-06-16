@@ -23,6 +23,7 @@ namespace Elementure.GameLogic.Items {
 		private void UpdateGUI() {
 			verbText.text = verb.ToString();
 		}
+
 		public override void ApplyTo(Agent agent) {
 			// TODO: agent.Inventory.OpenVerbQuickMenu();
 		}

@@ -1,4 +1,5 @@
 ﻿using Elementure.GameLogic.Agents;
+using Elementure.GameLogic.Words;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,13 +54,23 @@ namespace Elementure.GameLogic.Behaviours {
 
 		#region Actions
 		protected void Idle() {
+			Verb movement = self.Inventory.VerbMovement;
 			float x = Random.Range(-1f, 1f);
 			float z = Random.Range(-1f, 1f);
+
 			self.movementDirection = new Vector3(x, 0, z);
 			if (self.movementDirection.magnitude > 0) {
 				self.lookingDirection = self.movementDirection;
 			}
-			self.Inventory.VerbMovement.Trigger(self.movementDirection.normalized);
+
+			Vector3 endPoint = movement.GetEndPosition(self.movementDirection);
+			TileController tile = GetTileAt(endPoint);
+			if (tile == null || !CheckTileAgainstVerb(tile, movement)) {
+				Debug.Log($"Can't move! Null? {tile == null} {endPoint}");
+				return;
+			}
+
+			movement.Trigger(self.movementDirection.normalized);
 		}
 
 		protected void Follow(Transform target) {
@@ -82,6 +93,23 @@ namespace Elementure.GameLogic.Behaviours {
 			return Vector3.Distance(target.position, transform.position) < self.Attributes.AttackDistance;
 		}
 
+		public TileController GetTileAt(Vector3 point) {
+			RaycastHit[] hits = Physics.RaycastAll(point, Vector3.down, 5f);
+
+			TileController tile = null;
+			int i = 0;
+			while (i < hits.Length && (tile = hits[i].collider.GetComponent<TileController>()) != null) {
+				i++;
+			}
+			return tile;
+		}
+
+		public bool CheckTileAgainstVerb(TileController tile, Verb verb) {
+			return (tile.CurrentState == TileStates.Fire && verb.Modifier == ModifierTypes.Fire)
+				   || (tile.CurrentState == TileStates.Water && verb.Modifier == ModifierTypes.Water)
+				   || (tile.CurrentState == TileStates.Wind && verb.Modifier == ModifierTypes.Air)
+				   || tile.CurrentState == TileStates.Normal;
+		}
 		#endregion
 
 		#region Debug

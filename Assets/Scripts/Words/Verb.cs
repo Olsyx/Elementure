@@ -57,6 +57,8 @@ namespace Elementure.GameLogic.Words {
 			return Type == VerbTypes.Walk || Type == VerbTypes.Jump || Type == VerbTypes.Roll;
 		}
 
+		public abstract Vector3 GetEndPosition(Vector3 direction);
+
 		protected List<Agent> GetTargets(Vector3 direction) {
 			switch (Modifier) {
 				case ModifierTypes.Area:

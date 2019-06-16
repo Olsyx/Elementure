@@ -25,6 +25,11 @@ namespace Elementure.GameLogic.Words {
 
 			// TODO
 		}
+
+		public override Vector3 GetEndPosition(Vector3 direction) {
+			float distance = agent.Attributes.WalkDistance * profile.distance;
+			return agent.transform.position + direction * distance;
+		}
 	}
 
 }

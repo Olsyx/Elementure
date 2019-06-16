@@ -25,6 +25,10 @@ namespace Elementure.GameLogic.Words {
 
 			// TODO
 		}
+
+		public override Vector3 GetEndPosition(Vector3 direction) {
+			return agent.transform.position;
+		}
 	}
 
 }

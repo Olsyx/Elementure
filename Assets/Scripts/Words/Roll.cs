@@ -34,7 +34,7 @@ namespace Elementure.GameLogic.Words {
 			startingPoint = agent.transform.position;
 			this.direction = direction.normalized;
 
-			distance = profile.distance;
+			distance = agent.Attributes.WalkDistance * profile.distance;
 			speed = agent.Attributes.Speed * profile.speed;
 			
 			rolling = true;
@@ -52,6 +52,10 @@ namespace Elementure.GameLogic.Words {
 			agent.transform.position += direction * speed * Time.deltaTime;
 		}
 
+		public override Vector3 GetEndPosition(Vector3 direction) {
+			float distance = agent.Attributes.WalkDistance * profile.distance;
+			return agent.transform.position + direction * distance;
+		}
 	}
 
 }

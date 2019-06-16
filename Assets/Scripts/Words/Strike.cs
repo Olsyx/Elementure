@@ -32,7 +32,10 @@ namespace Elementure.GameLogic.Words {
 				targets[i].Damage(damage);
 			}
 		}
-		
+
+		public override Vector3 GetEndPosition(Vector3 direction) {
+			return agent.transform.position;
+		}
 	}
 
 }

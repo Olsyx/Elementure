@@ -94,6 +94,10 @@ namespace Elementure.GameLogic.Words {
 			projectile.direction = direction;
 			projectile.SetData(Modifier, profile.damage);
 		}
+		
+		public override Vector3 GetEndPosition(Vector3 direction) {
+			return agent.transform.position;
+		}
 
 		#region Debug
 		public override void DrawGizmos(ModifierTypes modifier, Color color, float size) {
