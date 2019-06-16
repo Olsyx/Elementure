@@ -1,5 +1,6 @@
 ﻿using Elementure.GameLogic;
 using Elementure.GameLogic.Agents;
+using Elementure.GameLogic.Words;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -64,14 +65,14 @@ namespace Elementure.GUI {
 				return;
 			}
 
-			movementVerbText.text = player.Inventory.VerbMovement.Type.ToString();
-			movementModifierText.text = player.Inventory.VerbMovement.Modifier.ToString();
+			UpdateVerbText(player.Inventory.VerbMovement, movementVerbText, movementModifierText);
+			UpdateVerbText(player.Inventory.VerbA, verbAText, modifierAText);
+			UpdateVerbText(player.Inventory.VerbB, verbBText, modifierBText);
+		}
 
-			verbAText.text = player.Inventory.VerbA?.Type.ToString();
-			modifierAText.text = player.Inventory.VerbA?.Modifier.ToString();
-
-			verbBText.text = player.Inventory.VerbB?.Type.ToString();
-			modifierBText.text = player.Inventory.VerbB?.Modifier.ToString();
+		private void UpdateVerbText(Verb verb, Text verbText, Text modifierText) {
+			verbText.text = verb != null ? verb.Type.ToString() : "None";
+			modifierText.text = verb != null ? verb.Modifier.ToString() : "None";
 		}
 		
 		public override void Show() {

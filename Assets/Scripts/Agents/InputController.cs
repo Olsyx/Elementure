@@ -10,6 +10,7 @@ namespace Elementure.GameLogic {
 	public class InputController : MonoBehaviour {
 
 		protected Agent self;
+		//protected InventoryLinker inventoryLinker;
 
 		public bool Initialized { get; protected set; }
 
@@ -88,10 +89,6 @@ namespace Elementure.GameLogic {
 			item.ApplyTo(this.self);
 
 			// Word => self.Inventory.quickMenu.Open(wordType)
-		}
-
-		private void OnTriggerExit(Collider other) {
-			//self.Inventory.quickMenu.Close();
 		}
 		#endregion
 

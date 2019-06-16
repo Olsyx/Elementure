@@ -23,6 +23,12 @@ namespace Elementure.GUI {
 			ShowMainMenu();
 		}
 
+		private void Update() {
+			if (Input.GetButtonDown("Start")) {
+				inventoryGUI.Toggle();
+			}
+		}
+
 		public void NewGame() {
 			Debug.Log("New game!");
 			SpawnPlayer();
