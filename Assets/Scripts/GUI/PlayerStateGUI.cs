@@ -10,6 +10,8 @@ namespace Elementure.GUI {
 		[SerializeField] protected Text speciesTxt;
 		[SerializeField] protected Text diary;
 		
+		public Text DiaryLog { get => diary; }
+
 		private void Start() {
 			speciesTxt.text = "SLIME";
 			diary.text = "";
@@ -21,7 +23,7 @@ namespace Elementure.GUI {
 		}
 
 		private void Update() {
-			if (player == null) {
+			if (player == null || blocked) {
 				return;
 			}
 

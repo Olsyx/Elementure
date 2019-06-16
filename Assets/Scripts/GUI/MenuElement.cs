@@ -10,6 +10,10 @@ namespace Elementure.GUI {
 		protected Agent player;
 
 		protected bool showing;
+		protected bool blocked;
+
+		public bool IsShowing { get => showing; }
+		public bool IsBlocked { get => blocked; }
 
 		public virtual void StorePlayer(Agent player) {
 			this.player = player;
@@ -25,13 +29,27 @@ namespace Elementure.GUI {
 		}
 
 		public virtual void Show() {
+			if (blocked) {
+				return;
+			}
 			showing = true;
 			gameObject.SetActive(true);
 		}
 
 		public virtual void Hide() {
+			if (blocked) {
+				return;
+			}
 			showing = false;
 			gameObject.SetActive(false);
+		}
+
+		public virtual void Block() {
+			blocked = true;
+		}
+
+		public virtual void Unblock() {
+			blocked = false;
 		}
 	}
 

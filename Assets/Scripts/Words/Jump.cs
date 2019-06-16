@@ -58,7 +58,7 @@ namespace Elementure.GameLogic.Words {
 				return;
 			}
 
-			if (peakReached && agent.IsGrounded()) {
+			if (agent.Colliding || (peakReached && agent.IsGrounded())) {
 				EndJump();
 			}
 

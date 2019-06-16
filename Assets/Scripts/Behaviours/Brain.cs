@@ -42,7 +42,7 @@ namespace Elementure.GameLogic.Behaviours {
 
 		#region Control
 		private void Update() {
-			if (self.State == Agent.AgentStates.Dead) {
+			if (GameMaster.Paused || self.State == Agent.AgentStates.Dead) {
 				return;
 			}
 

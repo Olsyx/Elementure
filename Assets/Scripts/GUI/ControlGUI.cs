@@ -13,14 +13,6 @@ namespace Elementure.GUI {
 		[SerializeField] protected MenuController menuController;
 		[SerializeField] protected InventoryGUI inventoryGUI;
 
-		[Header("Buttons")]
-		[SerializeField] protected Button up;
-		[SerializeField] protected Button down;
-		[SerializeField] protected Button left;
-		[SerializeField] protected Button right;
-		[SerializeField] protected Button a;
-		[SerializeField] protected Button b;
-
 		[Header("Labels")]
 		[SerializeField] protected Text movementVerbText;
 		[SerializeField] protected Text movementModifierText;
@@ -38,32 +30,63 @@ namespace Elementure.GUI {
 		}
 
 		public void Up() {
+			if (inventoryGUI.IsShowing) {
+				inventoryGUI.ChooseMovement();
+				return;
+			}
 			input.AddToVerticalAxis(1);
 		}
 
 		public void Down() {
+			if (inventoryGUI.IsShowing) {
+				inventoryGUI.ChooseMovement();
+				return;
+			}
 			input.AddToVerticalAxis(-1);
 		}
 
 		public void Left() {
+			if (inventoryGUI.IsShowing) {
+				inventoryGUI.ChooseMovement();
+				return;
+			}
 			input.AddToHorizontalAxis(-1);
 		}
 
 		public void Right() {
+			if (inventoryGUI.IsShowing) {
+				inventoryGUI.ChooseMovement();
+				return;
+			}
+
 			input.AddToHorizontalAxis(1);
 		}
 		
 		public void ButtonA() {
+			if (inventoryGUI.IsShowing) {
+				inventoryGUI.ChooseA();
+				return;
+			}
+
 			input.TriggerA();
 		}
 
 		public void ButtonB() {
+			if (inventoryGUI.IsShowing) {
+				inventoryGUI.ChooseB();
+				return;
+			}
+
 			input.TriggerB();
 		}
 		
 		public void PushedStart() {
 			if (menuController.GameEnded) {
 				menuController.Restart();
+
+			} else if (inventoryGUI.IsShowing) {
+				inventoryGUI.EndChoosingState();
+
 			} else {
 				inventoryGUI.Toggle();
 			}
