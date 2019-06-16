@@ -105,17 +105,6 @@ namespace Elementure.GameLogic {
 		#endregion
 
 		#region Debug
-		/*private void OnDrawGizmos() {
-			if (!Application.isPlaying) {
-				StoreComponents();
-				Setup();
-			}
-
-			VerbMovement.DrawGizmos(initialInventory.movementModifier, Color.cyan, 0.1f);
-			VerbA?.DrawGizmos(initialInventory.modifierA, Color.green, 0.1f);
-			VerbB?.DrawGizmos(initialInventory.modifierB, Color.red, 0.1f);
-		}*/
-
 		#endregion
 	}
 }

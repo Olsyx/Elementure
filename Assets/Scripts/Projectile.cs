@@ -10,7 +10,8 @@ namespace Elementure.GameLogic {
 	[Serializable]
 	public class ProjectileClass {
 		public ModifierTypes modifier;
-		public GameObject prefab;
+		public Sprite sprite;
+		public GameObject trail;
 	}
 
 	[RequireComponent(typeof(Rigidbody))]
@@ -18,13 +19,18 @@ namespace Elementure.GameLogic {
 	public class Projectile : MonoBehaviour {
 
 		[SerializeField] protected float speed;
-		[SerializeField] protected GameObject defaultPrefab;
+		[SerializeField] protected float trailSpawnGap = 0.5f;
+		[SerializeField] protected SpriteRenderer renderer;
+		[SerializeField] protected Transform trailSpawnPoint;
 		[SerializeField] protected List<ProjectileClass> types = new List<ProjectileClass>();
 
 		[NonSerialized] public Vector3 direction;
 
 		protected float damage;
+		protected float countdown;
 		protected ModifierTypes modifier;
+		protected GameObject trailPrefab;
+		protected bool spawnTrail;
 
 		#region Init
 		public void SetData(ModifierTypes type, float damage) {
@@ -35,14 +41,14 @@ namespace Elementure.GameLogic {
 
 		private void SpawnType() {
 			ProjectileClass projectileClass = types.FirstOrDefault(p => p.modifier == this.modifier);
-			GameObject prefab = (projectileClass != null) ? projectileClass.prefab : defaultPrefab;
-			
-			if (prefab == null) {
+
+			if (projectileClass == null) {
 				return;
 			}
 
-			GameObject graphics = Instantiate(prefab, this.transform);
-			graphics.transform.localPosition = new Vector3();
+			renderer.sprite = projectileClass.sprite;
+			spawnTrail = projectileClass.trail != null;
+			trailPrefab = projectileClass.trail;
 		}
 		#endregion
 
@@ -59,6 +65,23 @@ namespace Elementure.GameLogic {
 		#region Control
 		private void Update() {
 			transform.position += direction * speed * Time.deltaTime;
+
+			if (!spawnTrail) {
+				return;
+			}
+
+			countdown -= Time.deltaTime;
+			if (countdown > 0) {
+				return;
+			}
+
+			countdown = trailSpawnGap;
+			SpawnTrail();
+		}
+
+		void SpawnTrail() {
+			GameObject trail = Instantiate(trailPrefab);
+			trail.transform.position = trailSpawnPoint.transform.position;
 		}
 
 		private void Collided(GameObject other) {
