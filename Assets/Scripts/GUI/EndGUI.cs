@@ -8,8 +8,8 @@ namespace Elementure.GUI {
 
 		[SerializeField] protected GameObject gameWonText;
 		[SerializeField] protected GameObject gameOverText;
-		[SerializeField] protected string wonAudioId = "";
-		[SerializeField] protected string lostAudioId = "";
+		[SerializeField] protected string wonAudioId = "WonAudio";
+		[SerializeField] protected string lostAudioId = "LostAudio";
 
 		private void Start() {
 			gameWonText.SetActive(false);

@@ -14,8 +14,8 @@ namespace Elementure.GUI {
 		[SerializeField] protected GameObject roomsParent;
 		[SerializeField] protected GameObject playerPrefab;
 		[SerializeField] protected Transform playerSpawnPoint;
-		[SerializeField] protected string mainMenuMusic = "";
-		[SerializeField] protected string gameMusic = "";
+		[SerializeField] protected string mainMenuMusic = "MainMenuMusic";
+		[SerializeField] protected string gameMusic = "GameMusic";
 
 		[Header("Menu Controllers")]
 		[SerializeField] protected MenuElement mainScreen;

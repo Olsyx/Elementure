@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Elementure.Audio;
 
 namespace Elementure.GameLogic.Agents {
 
@@ -23,6 +24,7 @@ namespace Elementure.GameLogic.Agents {
 		[SerializeField] protected AgentAttributeSheet attributes;
 		[SerializeField] protected Transform feet;
 		[SerializeField] protected Animator animator;
+		[SerializeField] protected string deathAudio = "Death_None";
 
 		[Header("Events")]
 		[SerializeField] public AgentEvent OnHealed = new AgentEvent();
@@ -84,12 +86,14 @@ namespace Elementure.GameLogic.Agents {
 			if (points <= 0) {
 				return;
 			}
+			AudioManager.Play($"Damage_None");
 
 			currentHealth -= (int)points;
 			OnDamaged?.Invoke(this);
 
 			if (currentHealth <= 0) {
 				State = AgentStates.Dead;
+				AudioManager.Play(deathAudio);
 				OnDead?.Invoke(this);
 			}
 		}

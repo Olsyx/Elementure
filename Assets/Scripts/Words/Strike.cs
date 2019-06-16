@@ -47,7 +47,7 @@ namespace Elementure.GameLogic.Words {
 		}
 
 		private void AdditionalEffects(Agent target) {
-			AudioManager.Play($"Strike_{Modifier}");
+			PlayAudio();
 
 			if (Modifier == ModifierTypes.None) {
 				return;
@@ -72,6 +72,14 @@ namespace Elementure.GameLogic.Words {
 				return;
 			}
 
+		}
+
+		private void PlayAudio() {
+			string type = (Modifier == ModifierTypes.Air || Modifier == ModifierTypes.Fire || Modifier == ModifierTypes.Water) 
+				            ? Modifier.ToString()
+							: "None";
+
+			AudioManager.Play($"Strike_{type}");
 		}
 	}
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Elementure.GameLogic.Agents;
+using Elementure.Audio;
 
 namespace Elementure.GameLogic {
 
@@ -86,7 +87,10 @@ namespace Elementure.GameLogic {
 
 		private void Collided(GameObject other) {
 			Agent target = other.GetComponent<Agent>();
-			target?.Damage(damage);
+			if (target != null) {
+				target.Damage(damage);
+				AudioManager.Play("Damage_None");
+			}
 			Destroy(this.gameObject);
 		}
 		#endregion

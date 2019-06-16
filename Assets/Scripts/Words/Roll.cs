@@ -1,4 +1,5 @@
-﻿using Elementure.GameLogic.Agents;
+﻿using Elementure.Audio;
+using Elementure.GameLogic.Agents;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,6 +40,7 @@ namespace Elementure.GameLogic.Words {
 			
 			rolling = true;
 			agent.Animator?.SetBool("Rolling", rolling);
+			AudioManager.Play("Roll");
 		}
 
 		public override void Update() {

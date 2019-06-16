@@ -16,9 +16,13 @@ namespace Elementure.Audio {
 			sources.Add(NewSource(false));
 		}
 
-		public void Play(string id) {
+		public void Play(string id, bool playOnce) {
 			AudioClip clip = audioSheet.Get(id);
 			if (clip == null) {
+				return;
+			}
+
+			if (playOnce && IsAudioBeingPlayed(clip)) {
 				return;
 			}
 
@@ -43,6 +47,15 @@ namespace Elementure.Audio {
 			loopSource.Play();
 		}
 		
+		protected bool IsAudioBeingPlayed(AudioClip clip) {
+			int i = 0;
+			while (i < sources.Count && (!sources[i].isPlaying || sources[i].clip != clip)) {
+				i++;
+			}
+
+			return i < sources.Count;
+		}
+
 		protected AudioSource GetFreeSource() {
 			int i = 0;
 			while (i < sources.Count && sources[i].isPlaying) {

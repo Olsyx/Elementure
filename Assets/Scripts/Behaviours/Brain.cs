@@ -81,11 +81,11 @@ namespace Elementure.GameLogic.Behaviours {
 				self.lookingDirection = self.movementDirection;
 			}
 
-			Vector3 endPoint = movementVerb.GetEndPosition(self.movementDirection);
+			/*Vector3 endPoint = movementVerb.GetEndPosition(self.movementDirection);
 			TileController tile = GetTileAt(endPoint);
 			if (tile == null || !CheckTileAgainstVerb(tile, movementVerb)) {
 				return;
-			}
+			}*/
 
 			self.Inventory.VerbMovement.Execute(self.movementDirection.normalized);
 		}

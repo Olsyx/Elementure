@@ -12,4 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2f654249a020e43be4a8fbaaa1f242, type: 3}
   m_Name: AudioSheet
   m_EditorClassIdentifier: 
-  audioEntries: []
+  audioEntries:
+  - id: Damage_None
+    clip: {fileID: 8300000, guid: 1e56c027e66d3ee47ad9266dc6d0480e, type: 3}
+  - id: Damage_Terrain
+    clip: {fileID: 8300000, guid: e489cae10d21eba4ebf960f83cfe8315, type: 3}
+  - id: Strike_None
+    clip: {fileID: 0}
+  - id: Strike_Fire
+    clip: {fileID: 0}
+  - id: Strike_Water
+    clip: {fileID: 0}
+  - id: Strike_Air
+    clip: {fileID: 0}
+  - id: Shoot_None
+    clip: {fileID: 0}
+  - id: Shoot_Fire
+    clip: {fileID: 0}
+  - id: Shoot_Fire
+    clip: {fileID: 0}
+  - id: Shoot_Water
+    clip: {fileID: 0}
+  - id: Shoot_Air
+    clip: {fileID: 0}
+  - id: Movement_None
+    clip: {fileID: 8300000, guid: b50cc8232f79ae147a8fa1a634e6f25c, type: 3}
+  - id: Movement_Fire
+    clip: {fileID: 8300000, guid: c9f0a408409dc0348a18a9f0f15587d0, type: 3}
+  - id: Movement_Water
+    clip: {fileID: 8300000, guid: 995c3a1c43cdd7a43ae48a384777808c, type: 3}
+  - id: Movement_Air
+    clip: {fileID: 8300000, guid: 95e76282fa19cdb4481031b87670ea30, type: 3}
+  - id: Jump
+    clip: {fileID: 0}
+  - id: Roll
+    clip: {fileID: 0}
+  - id: ChargeRoom
+    clip: {fileID: 0}
+  - id: Death_None
+    clip: {fileID: 8300000, guid: 2d0015cbd2f2c804982e04b00dfee533, type: 3}
+  - id: Death_Fire
+    clip: {fileID: 0}
+  - id: Death_Water
+    clip: {fileID: 8300000, guid: 7759f04a240a509498bb616760300ea8, type: 3}
+  - id: Death_Air
+    clip: {fileID: 8300000, guid: c9feffd9a57c23641a617ce6ed7e918f, type: 3}
+  - id: MainMenuMusic
+    clip: {fileID: 0}
+  - id: GameMusic
+    clip: {fileID: 0}
+  - id: WonAudio
+    clip: {fileID: 0}
+  - id: LostAudio
+    clip: {fileID: 0}

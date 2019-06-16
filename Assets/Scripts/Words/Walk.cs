@@ -1,4 +1,5 @@
-﻿using Elementure.GameLogic.Agents;
+﻿using Elementure.Audio;
+using Elementure.GameLogic.Agents;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,11 +50,22 @@ namespace Elementure.GameLogic.Words {
 
 			walking = Vector3.Distance(agent.transform.position, startingPoint) < distance;
 			agent.transform.position += direction * speed * Time.deltaTime;
+
+			PlayAudio();
 		}
 
 		public override Vector3 GetEndPosition(Vector3 direction) {
 			float distance = agent.Attributes.WalkDistance * profile.distance;
 			return agent.transform.position + direction * distance;
+		}
+
+		private void PlayAudio() {
+			TileController tile = agent.GetTile();
+			string type = tile != null && (tile.CurrentState == TileStates.Wind || tile.CurrentState == TileStates.Fire || tile.CurrentState == TileStates.Water)
+							? tile.CurrentState.ToString()
+							: "None";
+
+			AudioManager.Play($"Movement_{type}", true);
 		}
 	}
 

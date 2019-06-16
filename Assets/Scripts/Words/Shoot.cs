@@ -1,4 +1,5 @@
-﻿using Elementure.GameLogic.Agents;
+﻿using Elementure.Audio;
+using Elementure.GameLogic.Agents;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -93,12 +94,21 @@ namespace Elementure.GameLogic.Words {
 			Projectile projectile = projectileObject.GetComponent<Projectile>();
 			projectile.direction = direction;
 			projectile.SetData(Modifier, profile.damage);
+
+			PlayAudio();
 		}
 		
 		public override Vector3 GetEndPosition(Vector3 direction) {
 			return agent.transform.position;
 		}
 
+		private void PlayAudio() {
+			string type = (Modifier == ModifierTypes.Air || Modifier == ModifierTypes.Fire || Modifier == ModifierTypes.Water)
+							? Modifier.ToString()
+							: "None";
+
+			AudioManager.Play($"Shoot_{type}");
+		}
 		#region Debug
 		public override void DrawGizmos(ModifierTypes modifier, Color color, float size) {
 			switch (modifier) {

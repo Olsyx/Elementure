@@ -1,4 +1,5 @@
-﻿using Elementure.GameLogic.Agents;
+﻿using Elementure.Audio;
+using Elementure.GameLogic.Agents;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -46,6 +47,7 @@ namespace Elementure.GameLogic.Words {
 			agent.Body.useGravity = false;
 
 			jumping = true;
+			AudioManager.Play("Jump");
 		}
 
 		public override void Update() {

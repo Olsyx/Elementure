@@ -13,7 +13,15 @@ namespace Elementure.GUI {
 		[SerializeField] protected MenuController menuController;
 		[SerializeField] protected InventoryGUI inventoryGUI;
 
-		[Header("Controls")]
+		[Header("Buttons")]
+		[SerializeField] protected Button up;
+		[SerializeField] protected Button down;
+		[SerializeField] protected Button left;
+		[SerializeField] protected Button right;
+		[SerializeField] protected Button a;
+		[SerializeField] protected Button b;
+
+		[Header("Labels")]
 		[SerializeField] protected Text movementVerbText;
 		[SerializeField] protected Text movementModifierText;
 		[SerializeField] protected Text verbAText;
@@ -86,7 +94,7 @@ namespace Elementure.GUI {
 			UpdateVerbText(player.Inventory.VerbA, verbAText, modifierAText);
 			UpdateVerbText(player.Inventory.VerbB, verbBText, modifierBText);
 		}
-
+		
 		private void UpdateVerbText(Verb verb, Text verbText, Text modifierText) {
 			verbText.text = verb != null ? verb.Type.ToString() : "None";
 			modifierText.text = verb != null ? verb.Modifier.ToString() : "None";

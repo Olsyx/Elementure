@@ -11,8 +11,8 @@ namespace Elementure.Audio {
 			audioControl = control;
 		}
 
-		public static void Play(string id) {
-			audioControl?.Play(id);
+		public static void Play(string id, bool playOnce = false) {
+			audioControl?.Play(id, playOnce);
 		}
 
 		public static void Loop(string id) {
