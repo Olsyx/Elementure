@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &144181239
 Transform:
   m_ObjectHideFlags: 0
@@ -103,7 +103,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1166732951225246778}
   - component: {fileID: 1147273885605482830}
-  - component: {fileID: 2574649260799539813}
   - component: {fileID: 546995048920836239}
   m_Layer: 0
   m_Name: Sensor_Water
@@ -139,20 +138,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2574649260799539813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4496299590575790302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce10436a0bfb9934ea4eb022bfa13408, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roomID: {fileID: 0}
-  damage: 1
 --- !u!114 &546995048920836239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,7 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomID: {fileID: 0}
   falldamage: 0
-  lastSafePosition: {x: 0, y: 0, z: 0}
+  lookingDirection: {x: 0, y: 0, z: 0}
   Agent: {fileID: 0}
 --- !u!1 &8377050689404436147
 GameObject:

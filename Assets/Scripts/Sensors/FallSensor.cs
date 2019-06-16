@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Elementure.GameLogic.Agents;
+using Elementure.GameLogic.Words;
 
 public class FallSensor : AgentSensor
 {
@@ -19,38 +20,43 @@ public class FallSensor : AgentSensor
 
     public override void OnTriggerEnter(Collider other)
     {
-        base.OnTriggerEnter(other);
+        //base.OnTriggerEnter(other);
 
-        Agent = other.GetComponent<Agent>();
-        string AgentId = Agent.Id;
+        if (other.GetComponent<Agent>() == null)
+            return;
 
-        lookingDirection = Agent.lookingDirection;
+        ModifierTypes AgentId = other.GetComponent<Agent>().Attributes.RaceModifier;
+
         switch (AgentId)
         {
-            case "Player":
+            case ModifierTypes.None:
+                lookingDirection = Agent.lookingDirection;
 
                 Agent.GetComponent<BoxCollider>().enabled = false;
                 StartCoroutine(Respawn());
                 Debug.Log("Eres el jugador");
                 break;
 
-            case "Gorgon":
+            case ModifierTypes.Water:
+
+                lookingDirection = Agent.lookingDirection;
+
+                break;
+
+
+            case ModifierTypes.Fire:
+                lookingDirection = Agent.lookingDirection;
 
 
                 break;
 
+            case ModifierTypes.Air:
 
-            case "Dragon":
+                lookingDirection = Agent.lookingDirection;
 
-
-                break;
-            case "Djin":
 
                 break;
 
-            case "Slime":
-
-                break;
         }
 
     }

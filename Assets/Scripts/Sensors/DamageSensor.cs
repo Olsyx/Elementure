@@ -10,7 +10,6 @@ public class DamageSensor : AgentSensor
     [SerializeField]
     public int damage;
 
-
     public override void Activate()
     {
         
@@ -18,18 +17,12 @@ public class DamageSensor : AgentSensor
 
     public override void OnTriggerEnter(Collider other)
     {
-        base.OnTriggerEnter(other);
-
         if (other.GetComponent<Agent>() == null)
             return;
-
+        base.OnTriggerEnter(other);
 
 
         ModifierTypes AgentId = other.GetComponent<Agent>().Attributes.RaceModifier;
-
-
-        //
-
         GameObject Agent = other.gameObject;
 
         switch (AgentId)
@@ -44,7 +37,6 @@ public class DamageSensor : AgentSensor
 
                 Debug.Log("Eres Fuego y te dejo");
                 break;
-
 
             case ModifierTypes.Water:
 
