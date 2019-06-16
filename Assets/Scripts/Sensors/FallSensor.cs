@@ -9,66 +9,42 @@ public class FallSensor : AgentSensor
     [SerializeField]
     public int falldamage;
 
-    public Vector3 lookingDirection;
-
-    public Agent Agent;
-
-    public override void Activate()
-    {
-
+    public override void Activate() {
     }
 
-    public override void OnTriggerEnter(Collider other)
-    {
-        //base.OnTriggerEnter(other);
+    public override void OnTriggerEnter(Collider other) {
+		Agent agent = other.GetComponent<Agent>();
+		if (agent == null) {
+			return;
+		}
 
-        if (other.GetComponent<Agent>() == null)
-            return;
+        ModifierTypes agentId = agent.Attributes.RaceModifier;
 
-        ModifierTypes AgentId = other.GetComponent<Agent>().Attributes.RaceModifier;
-
-        switch (AgentId)
-        {
+        switch (agentId) {
             case ModifierTypes.None:
-                lookingDirection = Agent.lookingDirection;
-
-                Agent.GetComponent<BoxCollider>().enabled = false;
-                StartCoroutine(Respawn());
+				agent.Collider.enabled = false;
+                StartCoroutine(Respawn(agent, agent.lookingDirection));
                 Debug.Log("Eres el jugador");
                 break;
 
             case ModifierTypes.Water:
-
-                //lookingDirection = Agent.lookingDirection;
-
                 break;
 
-
             case ModifierTypes.Fire:
-                lookingDirection = Agent.lookingDirection;
-
-
                 break;
 
             case ModifierTypes.Air:
-
-                lookingDirection = Agent.lookingDirection;
-
-
                 break;
 
         }
 
     }
 
-    IEnumerator Respawn()
-    {
-
+    IEnumerator Respawn(Agent agent, Vector3 safeLookingDirection) {
         yield return new WaitForSeconds(2.0f);
-
-        Agent.GetComponent<BoxCollider>().enabled = true;
-        Debug.Log("Respawn");
-        Agent.transform.position = gameObject.transform.position - lookingDirection.normalized * 2;
+		agent.Collider.enabled = true;
+        Debug.Log($"Respawned {agent.Id}");
+		agent.transform.position = gameObject.transform.position - safeLookingDirection.normalized * 2;
     }
 
 }
