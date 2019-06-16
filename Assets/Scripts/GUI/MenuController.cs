@@ -30,8 +30,8 @@ namespace Elementure.GUI {
 		}
 
 		public void NewGame() {
-			Debug.Log("New game!");
 			SpawnPlayer();
+			Player.OnDead.AddListener(delegate(Agent agent) { GameEnded(false); });
 
 			playerStateGUI.StorePlayer(Player);
 			inventoryGUI.StorePlayer(Player);
@@ -75,7 +75,6 @@ namespace Elementure.GUI {
 		}
 
 		public void Quit() {
-			Debug.Log("Quit!");
 			Application.Quit();
 		}
 	}

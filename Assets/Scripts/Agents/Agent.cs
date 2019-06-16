@@ -25,9 +25,9 @@ namespace Elementure.GameLogic.Agents {
 		[SerializeField] protected Animator animator;
 
 		[Header("Events")]
-		[SerializeField] AgentEvent OnHealed = new AgentEvent();
-		[SerializeField] AgentEvent OnDamaged = new AgentEvent();
-		[SerializeField] AgentEvent OnDead = new AgentEvent();
+		[SerializeField] public AgentEvent OnHealed = new AgentEvent();
+		[SerializeField] public AgentEvent OnDamaged = new AgentEvent();
+		[SerializeField] public AgentEvent OnDead = new AgentEvent();
 
 		protected int currentHealth;
 
