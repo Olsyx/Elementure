@@ -13,6 +13,8 @@ namespace Elementure.GameLogic {
 
 		public bool Initialized { get; protected set; }
 
+		protected float verticalAxis, horizontalAxis;
+
 		#region Init
 		private void Awake() {
 			Initialized = false;
@@ -56,21 +58,27 @@ namespace Elementure.GameLogic {
 			} 
 
 			if (Input.GetButton("A")) {
-				self.Inventory.VerbA?.Trigger(self.lookingDirection);
+				TriggerA();
 			}
 
 			if (Input.GetButton("B")) {
-				self.Inventory.VerbB?.Trigger(self.lookingDirection);
+				TriggerB();
 			}
 		}
 
 		private void SetMovementDirection() {
-			float x = Input.GetAxis("Horizontal");
-			float z = Input.GetAxis("Vertical");
+			float x = horizontalAxis == 0 ? Input.GetAxis("Horizontal") : horizontalAxis;
+			float z = verticalAxis == 0 ? Input.GetAxis("Vertical") : verticalAxis;
+			ResetAxis();
 			self.movementDirection = new Vector3(x, 0, z);
 			self.movementDirection = self.movementDirection.normalized;
 		}
 
+		void ResetAxis() {
+			horizontalAxis = 0f;
+			verticalAxis = 0f;
+		}
+		
 		private void OnTriggerEnter(Collider other) {
 			Item item = other.GetComponent<Item>();
 			if (item == null) {
@@ -84,6 +92,26 @@ namespace Elementure.GameLogic {
 
 		private void OnTriggerExit(Collider other) {
 			//self.Inventory.quickMenu.Close();
+		}
+		#endregion
+
+		#region Actions
+		public void AddToVerticalAxis(float value) {
+			verticalAxis += value;
+			verticalAxis = Mathf.Min(1, verticalAxis);
+		}
+
+		public void AddToHorizontalAxis(float value) {
+			horizontalAxis += value;
+			horizontalAxis = Mathf.Min(1, horizontalAxis);
+		}
+
+		public void TriggerA() {
+			self.Inventory.VerbA?.Trigger(self.lookingDirection);
+		}
+
+		public void TriggerB() {
+			self.Inventory.VerbB?.Trigger(self.lookingDirection);
 		}
 		#endregion
 
