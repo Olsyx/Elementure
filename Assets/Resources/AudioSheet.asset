@@ -18,23 +18,21 @@ MonoBehaviour:
   - id: Damage_Terrain
     clip: {fileID: 8300000, guid: e489cae10d21eba4ebf960f83cfe8315, type: 3}
   - id: Strike_None
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 1e56c027e66d3ee47ad9266dc6d0480e, type: 3}
   - id: Strike_Fire
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 1e56c027e66d3ee47ad9266dc6d0480e, type: 3}
   - id: Strike_Water
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 1e56c027e66d3ee47ad9266dc6d0480e, type: 3}
   - id: Strike_Air
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 1e56c027e66d3ee47ad9266dc6d0480e, type: 3}
   - id: Shoot_None
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: d9c474ed96fed544c81740e93a263183, type: 3}
   - id: Shoot_Fire
-    clip: {fileID: 0}
-  - id: Shoot_Fire
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 14b3fb307bbf056438aa92875bdd58f8, type: 3}
   - id: Shoot_Water
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 00efe943eace7664eb453f9fb1dde7dd, type: 3}
   - id: Shoot_Air
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: b9874e22135f0004daeaca6314cc3a6f, type: 3}
   - id: Movement_None
     clip: {fileID: 8300000, guid: b50cc8232f79ae147a8fa1a634e6f25c, type: 3}
   - id: Movement_Fire
@@ -44,15 +42,15 @@ MonoBehaviour:
   - id: Movement_Air
     clip: {fileID: 8300000, guid: 95e76282fa19cdb4481031b87670ea30, type: 3}
   - id: Jump
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: e0bd6d45d533bab4c9569707f6d0146c, type: 3}
   - id: Roll
-    clip: {fileID: 0}
-  - id: ChargeRoom
+    clip: {fileID: 8300000, guid: 996780c6912fa684eab4ff885d7583d6, type: 3}
+  - id: ChangeRoom
     clip: {fileID: 0}
   - id: Death_None
     clip: {fileID: 8300000, guid: 2d0015cbd2f2c804982e04b00dfee533, type: 3}
   - id: Death_Fire
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: e43f9f2b776252f449804ce59fb700ae, type: 3}
   - id: Death_Water
     clip: {fileID: 8300000, guid: 7759f04a240a509498bb616760300ea8, type: 3}
   - id: Death_Air
