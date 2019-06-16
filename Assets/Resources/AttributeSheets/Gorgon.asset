@@ -17,5 +17,5 @@ MonoBehaviour:
   speed: 1
   walkDistance: 1
   sightDistance: 12
-  attackDistance: 1.5
+  attackDistance: 8
   cooldown: 3
