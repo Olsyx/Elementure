@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2522162879702325954}
   - component: {fileID: 7476460205022294314}
   m_Layer: 0
-  m_Name: AGUA
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8377130690987618698, guid: c34d45c6eea8b4432b2b10ce2b45c244,
+  m_Sprite: {fileID: -7077578495685720143, guid: d90ed16ea5525436fbae7ed6dbd3c39e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

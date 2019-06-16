@@ -23,7 +23,7 @@ namespace Elementure.GameLogic.Words {
 		#region Init
 		public Verb(ModifierTypes modifier, Agent agent) {
 			this.agent = agent;
-			LoadModifierProfile();
+			SetModifier(modifier);
 		}
 
 		public abstract void LoadModifierProfile();

@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 233818726018118796}
   - component: {fileID: 4674514164866174758}
   m_Layer: 0
-  m_Name: FUEGO
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +128,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5062486230716756072, guid: c34d45c6eea8b4432b2b10ce2b45c244,
+  m_Sprite: {fileID: 5336182098369700544, guid: d90ed16ea5525436fbae7ed6dbd3c39e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

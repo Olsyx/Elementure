@@ -25,7 +25,7 @@ namespace Elementure.GameLogic.Behaviours {
 			}
 
 			Vector3 direction = player.transform.position - transform.position;
-			self.Inventory.VerbA.Trigger(direction.normalized);
+			self.Inventory.VerbA?.Trigger(direction.normalized);
 		}
 	}
 
