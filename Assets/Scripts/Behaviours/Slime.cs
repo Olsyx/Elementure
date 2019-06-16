@@ -10,7 +10,7 @@ namespace Elementure.GameLogic.Behaviours {
 
 		protected Agent player;
 		protected override void StoreReferences() {
-			player = FindObjectOfType<InputController>().GetComponent<Agent>();
+			player = AgentManager.GetAgent("Player");
 		}
 
 		protected override void ExecuteBehaviour() {

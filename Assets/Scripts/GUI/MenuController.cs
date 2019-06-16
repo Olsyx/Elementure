@@ -1,13 +1,17 @@
 ﻿using Elementure.Audio;
+using Elementure.GameLogic;
 using Elementure.GameLogic.Agents;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Elementure.GUI {
 
 	public class MenuController : MonoBehaviour {
 		[Header("Environment")]
+		[SerializeField] protected CameraControl cameraControl;
+		[SerializeField] protected GameObject roomsParent;
 		[SerializeField] protected GameObject playerPrefab;
 		[SerializeField] protected Transform playerSpawnPoint;
 		[SerializeField] protected string mainMenuMusic = "";
@@ -23,6 +27,10 @@ namespace Elementure.GUI {
 		public Agent Player { get; protected set; }
 		public bool GameEnded { get; protected set; }
 
+		private void Awake() {
+			roomsParent.SetActive(false);
+		}
+
 		private void Start() {
 			ShowMainMenu();
 		}
@@ -30,7 +38,9 @@ namespace Elementure.GUI {
 		public void NewGame() {
 			SpawnPlayer();
 			Player.OnDead.AddListener(delegate(Agent agent) { EndGame(false); });
+			roomsParent.SetActive(true);
 
+			cameraControl.StorePlayer(Player);
 			playerStateGUI.StorePlayer(Player);
 			inventoryGUI.StorePlayer(Player);
 			controlGUI.StorePlayer(Player);
@@ -75,6 +85,10 @@ namespace Elementure.GUI {
 			controlGUI.DisableButtons();
 			endGUI.Hide();
 			AudioManager.Loop(mainMenuMusic);
+		}
+
+		public void Restart() {
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		}
 
 		public void Quit() {

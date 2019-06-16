@@ -55,7 +55,7 @@ namespace Elementure.GUI {
 		
 		public void PushedStart() {
 			if (menuController.GameEnded) {
-				menuController.GoToMainMenu();
+				menuController.Restart();
 			} else {
 				inventoryGUI.Toggle();
 			}

@@ -3617,9 +3617,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5739e9d4dd29f27449b7688fe4cb795a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraControl: {fileID: 7360869243874246251}
+  roomsParent: {fileID: 0}
   playerPrefab: {fileID: 2837904276505136041, guid: 7192caddeca582c44bd9e08199c3e522,
     type: 3}
-  playerSpawnPoint: {fileID: 0}
+  playerSpawnPoint: {fileID: 7802171205403656319}
   mainMenuMusic: 
   gameMusic: 
   mainScreen: {fileID: 8419471063585447814}
@@ -5253,6 +5255,7 @@ GameObject:
   - component: {fileID: 7802171205403656319}
   - component: {fileID: 7802171205403656318}
   - component: {fileID: 7802171205403656317}
+  - component: {fileID: 7360869243874246251}
   m_Layer: 0
   m_Name: GameCamera
   m_TagString: MainCamera
@@ -5327,6 +5330,20 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7802171205403656316}
   m_Enabled: 1
+--- !u!114 &7360869243874246251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7802171205403656316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223a96e227070334b856a247e2607433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  distance: 20
 --- !u!1 &8118172258356456635
 GameObject:
   m_ObjectHideFlags: 0
