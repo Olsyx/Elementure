@@ -82,7 +82,8 @@ namespace Elementure.GameLogic.Words {
 
 			if (Modifier == ModifierTypes.Water) {
 				GameObject water = GameObject.Instantiate(waterPrefab);
-				water.transform.position = target.Feet.position - direction.normalized * 0.2f;
+				Debug.Log("Water instantiated");
+				water.transform.position = target.Feet.position - direction.normalized * 0.5f;
 				return;
 			}
 

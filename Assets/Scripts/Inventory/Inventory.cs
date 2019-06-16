@@ -70,16 +70,16 @@ namespace Elementure.GameLogic.Inventories {
 		#region Actions
 		public void Drop() {
 			GameObject spawnedMovement = Spawn(VerbMovement);
-			spawnedMovement.transform.position = transform.position + Vector3.back;
+			spawnedMovement.transform.position = transform.position + Vector3.back * 2f;
 
 			GameObject spawnedA = Spawn(VerbA);
 			if (spawnedA != null) {
-				spawnedA.transform.position = transform.position + Vector3.left;
+				spawnedA.transform.position = transform.position + Vector3.left * 2f;
 			}
 
 			GameObject spawnedB = Spawn(VerbB);
 			if (spawnedB != null) {
-				spawnedB.transform.position = transform.position + Vector3.right;
+				spawnedB.transform.position = transform.position + Vector3.right * 2f;
 			}
 		}
 
