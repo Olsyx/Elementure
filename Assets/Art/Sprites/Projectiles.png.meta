@@ -121,12 +121,12 @@ TextureImporter:
       name: Projectile_NEUTRAL
       rect:
         serializedVersion: 2
-        x: 0
-        y: 11
+        x: 9
+        y: 9
         width: 7
-        height: 5
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -142,12 +142,12 @@ TextureImporter:
       name: Projectiles_FIRE
       rect:
         serializedVersion: 2
-        x: 9
-        y: 11
+        x: 0
+        y: 0
         width: 7
-        height: 5
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -163,12 +163,12 @@ TextureImporter:
       name: Projectiles_WATER
       rect:
         serializedVersion: 2
-        x: 0
-        y: 5
+        x: 9
+        y: 0
         width: 7
-        height: 5
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: Projectiles_AIR
       rect:
         serializedVersion: 2
-        x: 9
-        y: 5
+        x: 0
+        y: 9
         width: 7
-        height: 5
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
