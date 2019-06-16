@@ -1,4 +1,5 @@
-﻿using Elementure.GameLogic.Agents;
+﻿using Elementure.Audio;
+using Elementure.GameLogic.Agents;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -46,6 +47,8 @@ namespace Elementure.GameLogic.Words {
 		}
 
 		private void AdditionalEffects(Agent target) {
+			AudioManager.Play($"Strike_{Modifier}");
+
 			if (Modifier == ModifierTypes.None) {
 				return;
 			}
