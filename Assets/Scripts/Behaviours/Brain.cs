@@ -66,7 +66,6 @@ namespace Elementure.GameLogic.Behaviours {
 			Vector3 endPoint = movement.GetEndPosition(self.movementDirection);
 			TileController tile = GetTileAt(endPoint);
 			if (tile == null || !CheckTileAgainstVerb(tile, movement)) {
-				Debug.Log($"Can't move! Null? {tile == null} {endPoint}");
 				return;
 			}
 
@@ -98,7 +97,7 @@ namespace Elementure.GameLogic.Behaviours {
 
 			TileController tile = null;
 			int i = 0;
-			while (i < hits.Length && (tile = hits[i].collider.GetComponent<TileController>()) != null) {
+			while (i < hits.Length && (tile = hits[i].collider.GetComponent<TileController>()) == null) {
 				i++;
 			}
 			return tile;

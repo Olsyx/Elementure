@@ -125,7 +125,7 @@ namespace Elementure.GameLogic.Agents {
 
 			TileController tile = null;
 			int i = 0;
-			while (i < hits.Length && (tile = hits[i].collider.GetComponent<TileController>()) != null) {
+			while (i < hits.Length && (tile = hits[i].collider.GetComponent<TileController>()) == null) {
 				i++;
 			}
 			return tile;

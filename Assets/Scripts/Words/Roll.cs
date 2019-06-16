@@ -38,12 +38,12 @@ namespace Elementure.GameLogic.Words {
 			speed = agent.Attributes.Speed * profile.speed;
 			
 			rolling = true;
+			agent.Animator?.SetBool("Rolling", rolling);
 		}
 
 		public override void Update() {
-			agent.Animator?.SetBool("Rolling", rolling);
-
 			if (!rolling) {
+				agent.Animator?.SetBool("Rolling", false);
 				base.Update();
 				return;
 			}
