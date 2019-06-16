@@ -33,6 +33,7 @@ namespace Elementure.GameLogic.Agents {
 
 		public string Id { get => id; }
 		public bool Initialized { get; protected set; }
+		public int CurrentHealth { get => currentHealth; }
 		public AgentAttributeSheet Attributes { get => attributes; }
 		public AgentStates State { get; protected set; }
 		public Inventory Inventory { get; protected set; }
