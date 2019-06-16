@@ -1,35 +1,26 @@
-﻿using Elementure.GameLogic.Agents;
-using Elementure.GameLogic.Words;
+﻿using Elementure.GameLogic.Words;
+using Elementure.GameLogic.Agents;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageSensor : AgentSensor
+public class DamageWaterSensor : AgentSensor
 {
-
     [SerializeField]
     public int damage;
 
 
     public override void Activate()
     {
-        
+
     }
 
     public override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
 
-        if (other.GetComponent<Agent>() == null)
-            return;
-
-
 
         ModifierTypes AgentId = other.GetComponent<Agent>().Attributes.RaceModifier;
-
-
-        //
-
         GameObject Agent = other.gameObject;
 
         switch (AgentId)
@@ -42,13 +33,13 @@ public class DamageSensor : AgentSensor
 
             case ModifierTypes.Fire:
 
+                Agent.GetComponent<Agent>().Damage(damage);
                 Debug.Log("Eres Fuego y te dejo");
                 break;
 
 
             case ModifierTypes.Water:
 
-                Agent.GetComponent<Agent>().Damage(damage);
                 Debug.Log("Eres Agua y daño");
                 break;
 
@@ -63,3 +54,5 @@ public class DamageSensor : AgentSensor
 
 
 }
+
+

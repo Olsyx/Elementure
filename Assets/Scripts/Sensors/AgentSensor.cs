@@ -10,8 +10,9 @@ public abstract class AgentSensor : MonoBehaviour
 
     public virtual void OnTriggerEnter(Collider other)
     {
+        if (other.GetComponent<Agent>() == null)
+            return;
 
-        Debug.Log(other.gameObject.GetComponent<Agent>().Id);
         Activate();
     }
 
