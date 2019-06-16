@@ -3518,7 +3518,7 @@ MonoBehaviour:
   roomsParent: {fileID: 0}
   playerPrefab: {fileID: 2837904276505136041, guid: 7192caddeca582c44bd9e08199c3e522,
     type: 3}
-  playerSpawnPoint: {fileID: 7802171205403656319}
+  playerSpawnPoint: {fileID: 0}
   mainMenuMusic: MainMenuMusic
   gameMusic: GameMusic
   mainScreen: {fileID: 8419471063585447814}
@@ -5180,7 +5180,7 @@ Transform:
   m_GameObject: {fileID: 7802171205403656316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.15814419, y: 0.15814419, z: 0.15814419}
   m_Children:
   - {fileID: 3582280486437476368}
   - {fileID: 8903529437581744133}
@@ -5214,7 +5214,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.75
+  orthographic size: 9.12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5250,7 +5250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223a96e227070334b856a247e2607433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 0.1
   distance: 20
 --- !u!1 &8118172258356456635
 GameObject:
