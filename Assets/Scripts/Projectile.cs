@@ -29,6 +29,7 @@ namespace Elementure.GameLogic {
 		#region Init
 		public void SetData(ModifierTypes type, float damage) {
 			modifier = type;
+			this.damage = damage;
 			SpawnType();
 		}
 

@@ -30,20 +30,29 @@ namespace Elementure.GameLogic.Words {
 			}
 
 			agent.Animator.SetTrigger("Attack");
-			
+						
+			if (Modifier == ModifierTypes.Twice) {
+				ShootDouble(agent.lookingDirection);
+				return;
+			}
+
+			if (Modifier == ModifierTypes.Thrice) {
+				ShootTriple(agent.lookingDirection);
+				return;
+			}
+
+			if (Modifier == ModifierTypes.Area) {
+				ShootArea(agent.lookingDirection);
+				return;
+			}
+
 			List<Agent> targets = GetTargets(direction);
 			if (targets != null && targets.Count > 0) {
 				ShootAt(GetTargets(direction));
 				return;
 			}
 
-			if (Modifier == ModifierTypes.Twice) {
-				ShootDouble(agent.lookingDirection);
-			} else if (Modifier == ModifierTypes.Thrice) {
-				ShootTriple(agent.lookingDirection);
-			} else {
-				SpawnProjectile(agent.lookingDirection);
-			}
+			SpawnProjectile(agent.lookingDirection);
 		}
 
 		void ShootDouble(Vector3 direction) {
@@ -59,6 +68,15 @@ namespace Elementure.GameLogic.Words {
 			SpawnProjectile(Quaternion.Euler(0, -tripleAngle, 0) * direction);
 			SpawnProjectile(direction);
 			SpawnProjectile(Quaternion.Euler(0, tripleAngle, 0) * direction);
+		}
+
+		void ShootArea(Vector3 direction) {
+			List<Agent> targets = new List<Agent>();
+
+			SpawnProjectile(Quaternion.Euler(0, -90, 0) * direction);
+			SpawnProjectile(direction);
+			SpawnProjectile(Quaternion.Euler(0, 90, 0) * direction);
+			SpawnProjectile(Quaternion.Euler(0, 180, 0) * direction);
 		}
 
 		void ShootAt(List<Agent> targets) {

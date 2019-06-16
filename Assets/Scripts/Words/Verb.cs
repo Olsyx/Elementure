@@ -67,6 +67,9 @@ namespace Elementure.GameLogic.Words {
 
 				case ModifierTypes.Us:
 					return GetUs();
+
+				case ModifierTypes.Me:
+					return new List<Agent>() { agent };
 			}
 
 			Agent target = GetTarget(direction);
